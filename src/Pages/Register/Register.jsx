@@ -50,7 +50,7 @@ export default function Register() {
 
     reset();
   };
-
+  
   return (
     <>
       <Helmet>
