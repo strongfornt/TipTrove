@@ -1,5 +1,5 @@
 /* eslint-disable no-dupe-keys */
-import {  useState } from "react";
+import {  useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaRegEyeSlash } from "react-icons/fa6";
@@ -8,9 +8,10 @@ import { useForm } from "react-hook-form";
 
 import toast, { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../../AuthProvider/ContextProvider";
 
 export default function Register() {
-  
+  const {createUser,updateUserProfile} = useContext(AuthContext)
   const [passToggle, setPassToggle] = useState(false);
 
   const {
@@ -34,19 +35,19 @@ export default function Register() {
 
   const formSubmit = (data) => {
     const { name, photo, email, password } = data;
-    // createUser(email, password)
-    //   .then((users) => {
-    //     const user = users.user;
-    //     toast.success("Account created! Welcome!");
-    //     //update profile
-    //     updateUserProfile(user, {
-    //       displayName: name,
-    //       photoURL: photo,
-    //     })
-    //       .then(() => {})
-    //       .catch(() => {});
-    //   })
-    //   .catch(() => toast.error("User already exist!"));
+    createUser(email, password)
+      .then((users) => {
+        const user = users.user;
+        toast.success("Account created! Welcome!");
+        //update profile
+        updateUserProfile(user, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {})
+          .catch(() => {});
+      })
+      .catch(() => toast.error("User already exist!"));
 
     reset();
   };
@@ -54,7 +55,7 @@ export default function Register() {
   return (
     <>
       <Helmet>
-        <title>TripTrove | Register</title>
+        <title>TipTrove | Register</title>
       </Helmet>
       <Toaster />
       <div className="text-transparent" >*</div>

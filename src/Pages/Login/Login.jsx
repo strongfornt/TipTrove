@@ -8,37 +8,38 @@ import toast, { Toaster } from "react-hot-toast";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../../AuthProvider/ContextProvider";
 
 export default function Login() {
   const location = useLocation();
  
   const navigate = useNavigate();
 
-//   const { signInUser, googleLogin, user,githubLogin } = useContext(AuthContext);
+  const { signInUser, googleLogin, user,githubLogin } = useContext(AuthContext);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // signInUser(email, password)
-    //   .then(() => {
-    //     toast.success("You're in! Welcome back!");
-    //   })
-    //   .catch(() => {
-    //     toast.error("invalid password or email");
-    //   });
+    signInUser(email, password)
+      .then(() => {
+        toast.success("You're in! Welcome back!");
+      })
+      .catch(() => {
+        toast.error("invalid password or email");
+      });
     e.target.reset();
   };
 
   const handleGoogleLogin = () => {
-    // googleLogin()
-    //   .then(() => {
-    //     toast.success("You're in! Welcome back!");
-    //   })
-    //   .catch(() => {
-    //     toast.error("Sign-in error. Check connection.");
+    googleLogin()
+      .then(() => {
+        toast.success("You're in! Welcome back!");
+      })
+      .catch(() => {
+        toast.error("Sign-in error. Check connection.");
        
-    //   });
+      });
   };
 
   const handleGithubLogin =() =>{
@@ -65,7 +66,7 @@ export default function Login() {
 
     <Helmet>
     <title>
-    AzureAcres | Login
+    TipTrove | Login
     </title>
     </Helmet>
       <Toaster />

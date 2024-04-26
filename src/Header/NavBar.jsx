@@ -117,7 +117,7 @@ export default function NavBar() {
 
   return (
     <>
-      <header className="relative  ">
+      <header className="relative z-30 ">
         <div
           className={`navbar px-2  md:px-8  ${
             scrollY < 199
