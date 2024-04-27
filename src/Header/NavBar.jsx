@@ -91,7 +91,7 @@ export default function NavBar() {
       </NavLink>
 
       <NavLink
-        to="/register"
+        to="/allTouristSpot"
         className={({ isActive }) =>
           isActive
             ? ` text-[#fcb040] w-fit text-sm font-medium  `

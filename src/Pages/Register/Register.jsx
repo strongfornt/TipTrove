@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../AuthProvider/ContextProvider";
 
 export default function Register() {
-  const {createUser,updateUserProfile} = useContext(AuthContext)
+  const {createUser,updateUserProfile,theme} = useContext(AuthContext)
   const [passToggle, setPassToggle] = useState(false);
 
   const {
@@ -79,7 +79,7 @@ export default function Register() {
               data-aos="zoom-in-up"
               data-aos-delay="500 "
               data-aos-duration="1000"
-              className="text-sm  text-[#4b5664] mb-2 "
+              className={`text-sm  ${theme ==="light"?'text-[#4b5664]':'text-white'} mb-2`}
             >
               Register now and be part of our community!
             </p>
@@ -104,7 +104,7 @@ export default function Register() {
                   name="name"
                   id="name"
                   placeholder="your name"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-transparent text-gray-800 outline-none focus:ring-1 focus:ring-accent/80"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-transparent outline-none focus:ring-1 focus:ring-[#fcb040]"
                 />
               </div>
               <div
@@ -121,7 +121,7 @@ export default function Register() {
                   name="photo"
                   id="photo"
                   placeholder="photo url"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300  bg-transparent text-gray-800 outline-none focus:ring-1 focus:ring-accent/80 "
+                  className="w-full px-3 py-2 border rounded-md border-gray-300  bg-transparent  outline-none focus:ring-1 focus:ring-[#fcb040] "
                 />
               </div>
               <div
@@ -139,7 +139,7 @@ export default function Register() {
                   name="email"
                   id="email"
                   placeholder="@gmail.com"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300  bg-transparent text-gray-800 outline-none focus:ring-1 focus:ring-accent/80"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300  bg-transparent  outline-none focus:ring-1 focus:ring-[#fcb040]"
                 />
               </div>
               <div
@@ -166,7 +166,7 @@ export default function Register() {
                   name="password"
                   id="password"
                   placeholder="******"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300  bg-transparent text-gray-800 outline-none focus:ring-1 focus:ring-accent/80 "
+                  className="w-full px-3 py-2 border rounded-md border-gray-300  bg-transparent  outline-none focus:ring-1 focus:ring-[#fcb040]"
                 />
 
                 {errors.password && isSubmitted && (
@@ -194,7 +194,7 @@ export default function Register() {
                   Register
                 </button>
               </div>
-              <p className="px-6 text-sm text-center dark:text-gray-600">
+              <p className={`px-6 text-sm text-center ${theme === "light"?'text-gray-600':'text-white'}`}>
                 Already have an account?
                 <Link
                   to="/login"

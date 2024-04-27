@@ -10,14 +10,16 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../AuthProvider/ContextProvider";
 
+
 export default function Login() {
   const location = useLocation();
  
   const navigate = useNavigate();
 
-  const { signInUser, googleLogin, user,githubLogin } = useContext(AuthContext);
+  const { signInUser, googleLogin, user,githubLogin,theme } = useContext(AuthContext);
 
   const handleFormSubmit = (e) => {
+  
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -89,7 +91,7 @@ export default function Login() {
             data-aos="zoom-in"
             data-aos-delay="500 "
             data-aos-duration="1000"
-            className="text-sm text-center text-[#4b5664] "
+            className={`text-sm text-center ${theme ==="light" ? 'text-[#4b5664]':'text-white'}`}
           >
             Don't have an account yet?
             <Link to="/register" className="underline text-violet-600">
@@ -151,7 +153,7 @@ export default function Login() {
                   name="email"
                   id="email"
                   placeholder="@gmail.com"
-                  className="w-full px-3 py-2 border outline-none rounded-md bg-transparent border-gray-300 text-gray-800 focus:ring-1 focus:ring-accent"
+                  className="w-full px-3 py-2 border outline-none rounded-md bg-transparent border-gray-300 focus:ring-1 focus:ring-[#fcb040]"
                 />
               </div>
               <div className="space-y-2">
@@ -172,7 +174,7 @@ export default function Login() {
                   name="password"
                   id="password"
                   placeholder="******"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-transparent outline-none dark:text-gray-800 focus:ring-1 focus:ring-accent"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-transparent outline-none  focus:ring-1 focus:ring-[#fcb040]"
                 />
               </div>
             </div>

@@ -10,6 +10,7 @@ import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import Error from "../PagesTwo/Error/Error";
 import AddTouristSpot from "../Pages/AddTouristSpot/AddTouristSpot";
 import PrivateRoute from "../PagesTwo/PrivateRoute/PrivateRoute";
+import AllTouristSpot from "../Pages/AllTourisstSpot/AllTouristSpot";
 
    export const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ import PrivateRoute from "../PagesTwo/PrivateRoute/PrivateRoute";
         {
             path:'/addTouristSpot',
             element:<PrivateRoute><AddTouristSpot/></PrivateRoute>
+        },
+        {
+            path:'/allTouristSpot',
+            element:<AllTouristSpot/>
         }
       ]
     },

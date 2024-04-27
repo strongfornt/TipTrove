@@ -40,7 +40,7 @@ export default function TopHeader() {
         </div>
 
         {/* login and register button */}
-        <div className="flex gap-3">
+        <div className="flex gap-3  ">
           <label className="cursor-pointer grid place-items-center">
             <input
             onChange={ handleTheme}
@@ -96,14 +96,14 @@ export default function TopHeader() {
           ) : (
             <>
               <Link to="/login">
-                <button className="text-[#fdfcfc] font-medium text-[12px]   hover:text-yellow-300 duration-300 ">
+                <p className="text-[#fdfcfc] font-medium text-[12px]   hover:text-yellow-300 duration-300 ">
                   Login
-                </button>
+                </p>
               </Link>
               <Link to="/register">
-                <button className="text-[#fdfcfc] font-medium text-[12px]  hover:text-yellow-300 duration-300 ">
+                <p className="text-[#fdfcfc] font-medium text-[12px]  hover:text-yellow-300 duration-300 ">
                   Register
-                </button>
+                </p>
               </Link>
             </>
           )}
