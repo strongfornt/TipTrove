@@ -8,6 +8,7 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import Error from "../PagesTwo/Error/Error";
+import AddTouristSpot from "../Pages/AddTouristSpot/AddTouristSpot";
 
    export const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ import Error from "../PagesTwo/Error/Error";
         {
             path:'/updateProfile',
             element:<UpdateProfile/>
+        },
+        {
+            path:'/addTouristSpot',
+            element:<AddTouristSpot/>
         }
       ]
     },

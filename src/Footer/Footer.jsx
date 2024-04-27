@@ -10,7 +10,7 @@ export default function Footer() {
       <footer
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="px-4 divide-y  bg-[#232020] text-base-100 "
+        className="px-4 divide-y  bg-[#232020] text-[#d4cccc] "
       >
         <div className="container  flex flex-col justify-between py-16 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className="lg:w-1/4 ">
@@ -40,7 +40,7 @@ export default function Footer() {
               </span>
             </a>
 
-            <p className="text-sm text-base-100 mt-2 max-w-screen-md text-center lg:text-start ">
+            <p className="text-sm text-[#d4cccc] mt-2 max-w-screen-md text-center lg:text-start ">
               Your passport to adventure! Explore iconic destinations, vibrant
               cultures, and unforgettable experiences with us. Start your
               journey today!
@@ -52,7 +52,7 @@ export default function Footer() {
                 data-aos="zoom-in-down"
                 data-aos-delay="1000 "
                 data-aos-duration="1000"
-                className="tracking-wide uppercase font-bold"
+                className="tracking-wide uppercase font-bold text-base-100 "
               >
                 Explore
               </h3>
@@ -83,7 +83,7 @@ export default function Footer() {
                 data-aos="zoom-in-down"
                 data-aos-delay="1000 "
                 data-aos-duration="1000"
-                className="tracking-wide uppercase font-bold"
+                className="tracking-wide uppercase font-bold text-base-100 "
               >
                 Route
               </h3>
@@ -92,6 +92,7 @@ export default function Footer() {
                   data-aos="zoom-in-up"
                   data-aos-delay="1200 "
                   data-aos-duration="1200"
+                  className="hover:text-[#fcb040] duration-300"
                 >
                   <Link to="/">Home</Link>
                 </li>
@@ -99,6 +100,7 @@ export default function Footer() {
                   data-aos="zoom-in-up"
                   data-aos-delay="1400 "
                   data-aos-duration="1400"
+                  className="hover:text-[#fcb040] duration-300"
                 >
                   <Link to="/register">Register</Link>
                 </li>
@@ -106,6 +108,7 @@ export default function Footer() {
                   data-aos="zoom-in-up"
                   data-aos-delay="1600 "
                   data-aos-duration="1600"
+                  className="hover:text-[#fcb040] duration-300"
                 >
                   <Link to="/login">Login</Link>
                 </li>
@@ -113,6 +116,7 @@ export default function Footer() {
                   data-aos="zoom-in-up"
                   data-aos-delay="1800 "
                   data-aos-duration="1800"
+                  className="hover:text-[#fcb040] duration-300"
                 >
                   <Link to="/GetTouch">Get In Touch</Link>
                 </li>
@@ -123,7 +127,7 @@ export default function Footer() {
                 data-aos="zoom-in-down"
                 data-aos-delay="1000 "
                 data-aos-duration="1000"
-                className="uppercase font-bold"
+                className="uppercase font-bold text-base-100"
               >
                 Contact us
               </h3>
@@ -169,7 +173,7 @@ export default function Footer() {
                 data-aos="zoom-in-down"
                 data-aos-delay="1000 "
                 data-aos-duration="1000"
-                className="uppercase font-bold"
+                className="uppercase font-bold text-base-100"
               >
                 Social media
               </div>
