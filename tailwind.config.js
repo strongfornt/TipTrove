@@ -19,8 +19,12 @@ export default {
       animation: {
         gradient: 'animatedgradient 6s ease infinite alternate',
       },
+     
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "halloween"],
+  }
 }
 

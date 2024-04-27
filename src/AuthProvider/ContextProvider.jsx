@@ -22,6 +22,8 @@ import {
   
     const [user, setUser] = useState(null);
     const [loading,setLoading] = useState(true)
+    const [theme,setTheme] = useState("light")
+    
     const createUser = (email, password) => {
       return createUserWithEmailAndPassword(auth, email, password);
     };
@@ -64,7 +66,7 @@ import {
         unSubscribe();
       };
     }, []);
-  console.log(user);
+  
     const authInfo = {
       user,
       createUser,
@@ -75,7 +77,9 @@ import {
       logOut,
       loading,
       setUser,
-      setLoading
+      setLoading,
+      theme,
+      setTheme
     };
     return (
       <>

@@ -55,11 +55,11 @@ export default function Login() {
 
 
 
-//   useEffect(() => {
-//     if (user) {
-//       navigate(location.state);
-//     }
-//   }, [user]);
+  useEffect(() => {
+    if (user) {
+      navigate(location.state);
+    }
+  }, [location.state,navigate,user]);
 
   return (
     <>

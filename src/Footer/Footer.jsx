@@ -3,14 +3,17 @@ import logo from "../assets/travelLogo.png";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/ContextProvider";
 
 export default function Footer() {
+    const{theme} = useContext(AuthContext)
   return (
     <>
       <footer
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="px-4 divide-y  bg-[#232020] text-[#d4cccc] "
+        className={`px-4 divide-y ${theme !=="light" && 'border-t rounded-t-lg border-[#8a8585]'} bg-[#232020] text-[#d4cccc]`}
       >
         <div className="container  flex flex-col justify-between py-16 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className="lg:w-1/4 ">
@@ -36,7 +39,7 @@ export default function Footer() {
                 className="font-extrabold  text-2xl text-[#fcb040]  "
               >
                 <span className="text-3xl font-bold">T</span>ip
-                <span className="  font-bold text-base-100 ">Trove</span>
+                <span className="  font-bold text-base-100 dark:text-white  ">Trove</span>
               </span>
             </a>
 
@@ -52,7 +55,7 @@ export default function Footer() {
                 data-aos="zoom-in-down"
                 data-aos-delay="1000 "
                 data-aos-duration="1000"
-                className="tracking-wide uppercase font-bold text-base-100 "
+                className="tracking-wide uppercase font-bold text-base-100  dark:text-white "
               >
                 Explore
               </h3>
@@ -61,20 +64,22 @@ export default function Footer() {
                   data-aos="zoom-in-up"
                   data-aos-delay="1200 "
                   data-aos-duration="1200"
+                  className="text-[#d4cccc]"
                 >
-                  <a rel="noopener noreferrer" href="#">
+                 
                     Featured
-                  </a>
+                 
                 </li>
 
                 <li
                   data-aos="zoom-in-up"
                   data-aos-delay="1400 "
                   data-aos-duration="1400"
+                  className="text-[#d4cccc]"
                 >
-                  <a rel="noopener noreferrer" href="#">
+                  
                     FAQ
-                  </a>
+                 
                 </li>
               </ul>
             </div>
@@ -83,7 +88,7 @@ export default function Footer() {
                 data-aos="zoom-in-down"
                 data-aos-delay="1000 "
                 data-aos-duration="1000"
-                className="tracking-wide uppercase font-bold text-base-100 "
+                className="tracking-wide uppercase font-bold text-base-100 dark:text-white "
               >
                 Route
               </h3>
@@ -127,7 +132,7 @@ export default function Footer() {
                 data-aos="zoom-in-down"
                 data-aos-delay="1000 "
                 data-aos-duration="1000"
-                className="uppercase font-bold text-base-100"
+                className="uppercase font-bold text-base-100 dark:text-white  "
               >
                 Contact us
               </h3>
@@ -141,7 +146,7 @@ export default function Footer() {
                      <FaLocationDot className="text-[#fcb040]" />
                   <a rel="noopener noreferrer" className="ml-2" href="#">
                  
-                    Barisal, 9999 City
+                    Dhaka, 9999 City
                   </a>
                 </li>
                 <li
@@ -173,7 +178,7 @@ export default function Footer() {
                 data-aos="zoom-in-down"
                 data-aos-delay="1000 "
                 data-aos-duration="1000"
-                className="uppercase font-bold text-base-100"
+                className="uppercase font-bold text-base-100 dark:text-white  "
               >
                 Social media
               </div>

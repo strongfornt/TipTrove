@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import Error from "../PagesTwo/Error/Error";
 import AddTouristSpot from "../Pages/AddTouristSpot/AddTouristSpot";
+import PrivateRoute from "../PagesTwo/PrivateRoute/PrivateRoute";
 
    export const router = createBrowserRouter([
     {
@@ -34,7 +35,7 @@ import AddTouristSpot from "../Pages/AddTouristSpot/AddTouristSpot";
         },
         {
             path:'/addTouristSpot',
-            element:<AddTouristSpot/>
+            element:<PrivateRoute><AddTouristSpot/></PrivateRoute>
         }
       ]
     },
