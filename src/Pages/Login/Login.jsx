@@ -26,6 +26,7 @@ export default function Login() {
     signInUser(email, password)
       .then(() => {
         toast.success("You're in! Welcome back!");
+        
       })
       .catch(() => {
         toast.error("invalid password or email");

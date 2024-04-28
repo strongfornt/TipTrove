@@ -115,8 +115,8 @@ export default function NavBar() {
       >
         <p className="">AddTouristSpot</p>
       </NavLink>
-      {/* <NavLink
-        to="/register"
+      <NavLink
+        to="/myList"
         className={({ isActive }) =>
           isActive
             ? ` text-[#fcb040] w-fit text-sm font-medium  `
@@ -124,7 +124,7 @@ export default function NavBar() {
         }
       >
         <p className="">MyList</p>
-      </NavLink> */}
+      </NavLink>
     </>
   );
 

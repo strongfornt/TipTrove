@@ -1,10 +1,12 @@
-import { Outlet } from "react-router-dom/dist";
+import { Outlet, useNavigation } from "react-router-dom/dist";
 import NavBar from "../Header/NavBar";
 import TopHeader from "../Header/TopHeader";
 import ScrollToTop from "../PagesTwo/ScrollToTop/ScrollToTop";
 import Footer from "../Footer/Footer";
+import Spinner from "../PagesTwo/Spinner/Spinner";
 
 export default function MainLayout() {
+    const navigation = useNavigation()
   return (
    <div>
 
@@ -17,7 +19,9 @@ export default function MainLayout() {
         <NavBar/>
     </header>
     <main className="" >
-        <Outlet/>
+        {
+            navigation.state ==="loading" ? <Spinner/> : <Outlet/>
+        }
     </main>
     <footer>
         <Footer/>

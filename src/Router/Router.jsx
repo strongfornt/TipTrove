@@ -12,6 +12,7 @@ import AddTouristSpot from "../Pages/AddTouristSpot/AddTouristSpot";
 import PrivateRoute from "../PagesTwo/PrivateRoute/PrivateRoute";
 import AllTouristSpot from "../Pages/AllTourisstSpot/AllTouristSpot";
 import CardDetails from "../Components/TouristCard/CardDetails";
+import MyList from "../Pages/MyList/MyList";
 
    export const router = createBrowserRouter([
     {
@@ -45,8 +46,12 @@ import CardDetails from "../Components/TouristCard/CardDetails";
             
         },{
             path:'/cardDetails/:id',
-            element:<CardDetails/>,
+            element:<PrivateRoute><CardDetails/></PrivateRoute>,
             loader:({params}) => fetch(`https://tourism-server-side-blush.vercel.app/touristSpot/${params.id}`)
+        },
+        {
+            path:'/myList',
+            element:<PrivateRoute><MyList/></PrivateRoute>
         }
       ]
     },

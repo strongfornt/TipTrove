@@ -5,10 +5,10 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function AddTouristSpot() {
-  const { user,theme  } = useContext(AuthContext);
+  const { user, theme } = useContext(AuthContext);
   const { displayName, email } = user || {};
 
-  const handleSubmit = (e) => { 
+  const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const photo = form.photo.value;
@@ -37,25 +37,28 @@ export default function AddTouristSpot() {
       name,
     };
 
-    axios.post("https://tourism-server-side-blush.vercel.app/touristSpot",touristSpot)
-    .then(res => {
+    axios
+      .post(
+        "https://tourism-server-side-blush.vercel.app/touristSpot",
+        touristSpot
+      )
+      .then((res) => {
         const data = res.data;
-        if(data.insertedId){
-            toast.success(' Data added smoothly!')
-             form.reset();
+        if (data.insertedId) {
+          toast.success(" Data added smoothly!");
+          form.reset();
         }
-    })
-    .catch((err)=>{
-        toast.error("Data upload paused. Retry with stable connection.")
+      })
+      .catch((err) => {
+        toast.error("Data upload paused. Retry with stable connection.");
         console.log(err);
-    })
-    
+      });
     
   };
 
   return (
     <>
-    <Toaster/>
+      <Toaster />
       <Helmet>
         <title>TipTrove | AddTouristSpot</title>
       </Helmet>
@@ -69,10 +72,20 @@ export default function AddTouristSpot() {
           <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-base-100">
             <div className="space-y-2 col-span-full lg:col-span-1">
               <p className="font-medium text-lg text-[#fcb040] ">
-                <span className={`${theme =="light" ?'text-[#4b5664]':'text-white' }`}>Add</span> tourists{" "}
-                <span>spot</span>{" "}
+                <span
+                  className={`${
+                    theme == "light" ? "text-[#4b5664]" : "text-white"
+                  }`}
+                >
+                  Add
+                </span>{" "}
+                tourists <span>spot</span>{" "}
               </p>
-              <p className={`text-xs  ${theme =="light"?'text-[#4b5664]':'text-[#d4cccc]'} `}>
+              <p
+                className={`text-xs  ${
+                  theme == "light" ? "text-[#4b5664]" : "text-[#d4cccc]"
+                } `}
+              >
                 Share the Magic! Contribute to our growing collection of dream
                 destinations. Inspire fellow travelers with your favorite spots
                 and hidden gems.
@@ -109,14 +122,20 @@ export default function AddTouristSpot() {
                 <label htmlFor="country" className="block text-sm">
                   Country name
                 </label>
-                <input
+
+                <select
                   required
-                  type="text"
-                  name="country"
                   id="country"
-                  placeholder="Country name "
+                  name="country"
                   className="w-full px-3 py-2 border outline-none rounded-md bg-transparent border-gray-300  focus:ring-1 focus:ring-[#fcb040]"
-                />
+                >
+                  <option value="Bangladesh">Bangladesh</option>
+                  <option value="Thailand">Thailand</option>
+                  <option value="Indonesia">Indonesia</option>
+                  <option value="Malaysia">Malaysia</option>
+                  <option value="Vietnam">Vietnam</option> 
+                  <option value="Cambodia">Cambodia</option> 
+                </select>
               </div>
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="location" className="block text-sm">
@@ -201,9 +220,20 @@ export default function AddTouristSpot() {
           <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-base-100">
             <div className="space-y-2 col-span-full lg:col-span-1">
               <p className="font-medium text-lg text-[#fcb040] ">
-                <span className={`${theme =="light" ?'text-[#4b5664]':'text-white' }`}>Per</span>sonal information{" "}
+                <span
+                  className={`${
+                    theme == "light" ? "text-[#4b5664]" : "text-white"
+                  }`}
+                >
+                  Per
+                </span>
+                sonal information{" "}
               </p>
-              <p className={`text-xs  ${theme =="light" ?'text-[#4b5664]':'text-[#d4cccc]' } `}>
+              <p
+                className={`text-xs  ${
+                  theme == "light" ? "text-[#4b5664]" : "text-[#d4cccc]"
+                } `}
+              >
                 {" "}
                 Make Your Mark! Complete your traveler profile with essential
                 details. Help us tailor recommendations and connect you with
