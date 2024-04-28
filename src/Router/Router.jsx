@@ -11,6 +11,7 @@ import Error from "../PagesTwo/Error/Error";
 import AddTouristSpot from "../Pages/AddTouristSpot/AddTouristSpot";
 import PrivateRoute from "../PagesTwo/PrivateRoute/PrivateRoute";
 import AllTouristSpot from "../Pages/AllTourisstSpot/AllTouristSpot";
+import CardDetails from "../Components/TouristCard/CardDetails";
 
    export const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ import AllTouristSpot from "../Pages/AllTourisstSpot/AllTouristSpot";
             path:'/allTouristSpot',
             element:<AllTouristSpot/>,
             
+        },{
+            path:'/cardDetails/:id',
+            element:<CardDetails/>,
+            loader:({params}) => fetch(`https://tourism-server-side-blush.vercel.app/touristSpot/${params.id}`)
         }
       ]
     },

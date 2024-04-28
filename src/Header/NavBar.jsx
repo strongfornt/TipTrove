@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom/dist";
+import { Link, NavLink } from "react-router-dom/dist";
 
 
 import profile from "./../assets/deFaultProfile1.png";
@@ -60,6 +60,7 @@ export default function NavBar() {
   const navLinks = (
     <>
       <NavLink
+        onClick={() => setMenu(false)}
         to="/"
         className={({ isActive }) =>
           isActive
@@ -70,6 +71,7 @@ export default function NavBar() {
         <p className="">Home</p>
       </NavLink>
       <NavLink
+        onClick={() => setMenu(false)}
         to="/register"
         className={({ isActive }) =>
           isActive
@@ -80,6 +82,7 @@ export default function NavBar() {
         <p className="">Register</p>
       </NavLink>
       <NavLink
+        onClick={() => setMenu(false)}
         to="/Login"
         className={({ isActive }) =>
           isActive
@@ -91,6 +94,7 @@ export default function NavBar() {
       </NavLink>
 
       <NavLink
+        onClick={() => setMenu(false)}
         to="/allTouristSpot"
         className={({ isActive }) =>
           isActive
@@ -101,6 +105,7 @@ export default function NavBar() {
         <p className="">AllTouristSpot</p>
       </NavLink>
       <NavLink
+        onClick={() => setMenu(false)}
         to="/addTouristSpot"
         className={({ isActive }) =>
           isActive
@@ -137,7 +142,7 @@ export default function NavBar() {
               : "hidden"
           } ${
             scrollY > 220
-              ?   `fixed ${theme ==="light" ? 'bg-white':'bg-[#2e3034]'} top-0 transition-all duration-500 flex shadow-sm `
+              ?   `fixed ${theme ==="light" ? 'bg-white':'bg-[#2e3034]'} z-30 top-0 transition-all duration-500 flex shadow-sm `
               : "absolute -top-32 "
           }`}
         >
@@ -148,7 +153,7 @@ export default function NavBar() {
             </a>
           </div>
           {/* <div className="navbar-end hidden lg:flex"></div> */}
-          <div className="navbar-end flex-1 ">
+          <div className="navbar-end flex-1  ">
           <label className="cursor-pointer  mr-4  md:hidden grid place-items-center">
             <input
             onChange={ handleTheme}
@@ -227,33 +232,29 @@ export default function NavBar() {
               </div>
 
               <ul
-                onClick={() => setMenu(false)}
+              
                 tabIndex={0}
                 className={`menu absolute mr-6  -left-64 -translate-y-[3.6rem] min-w-60 menu-sm md:hidden text-xl  dropdown-content border-r   border-success border-opacity-60 
                    mt-3 z-[10] shadow-lg bg-base-100  min-h-screen  rounded-r-xl   gap-2    ${
                      menu && " -left-[0.1rem]  duration-300 transition-all  "
                    }`}
               >
-                {/* {user && (
+                {user && (
                 <li className="flex  items-center    ">
                   <div className="avatar">
-                    <div className="w-10 rounded-full ring-1 ring-accent ring-offset-base-100 ring-offset-2">
+                    <div className="w-10 rounded-full ring-1 ring-[#4b5664] ring-offset-base-100 ring-offset-2">
                       <img src={user?.photoURL || profile} />
                     </div>
                   </div>
                   <div>
                     <h2
-                      className={`text-lg font-bold  ${
-                        location.pathname == "/"
-                          ? "text-white"
-                          : "text-[#191515]"
-                      }`}
+                      className={`text-lg font-bold text-[#191515]  `}
                     >
                       {user?.displayName || "Anonymous"}
                     </h2>
                   </div>
                 </li>
-              )} */}
+              )}
 
                 <li
                   className={` rounded-md bg-gray-800 text-white  `}
@@ -271,11 +272,9 @@ export default function NavBar() {
                 {navLinks}
 
                 <div
-                  className={`${
-                    location.pathname == "/" ? "bg-base-200" : "bg-gray-800"
-                  } w-full inline-flex h-[1px] my-2`}
+                  className={` bg-gray-800 w-full inline-flex h-[1px] my-2`}
                 ></div>
-                {/* <li className="">
+                <li className="">
                 {user ? (
                   <button
                     onClick={()=>{
@@ -283,24 +282,14 @@ export default function NavBar() {
                       setMenu(false)
                     }}
                     className={`flex px-2 py-1 w-fit  relative rounded group overflow-hidden font-medium border-b  
-              ${
-                location.pathname == "/"
-                  ? "border-base-200 text-base-200"
-                  : "border-gray-800 text-gray-800"
-              }
+                    border-gray-800 text-gray-800
               `}
                   >
                     <span
-                      className={`absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 ${
-                        location.pathname == "/" ? "bg-base-200" : "bg-gray-800"
-                      } group-hover:h-full opacity-90`}
+                      className={`absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-gray-800  group-hover:h-full opacity-90`}
                     ></span>
                     <span
-                      className={`relative ${
-                        location.pathname == "/"
-                          ? "group-hover:text-gray-800"
-                          : "group-hover:text-white"
-                      }`}
+                      className={`relative group-hover:text-white `}
                     >
                       Logout
                     </span>
@@ -310,37 +299,28 @@ export default function NavBar() {
                     to="/login"
                     onClick={() => setMenu(false)}
                     className={`flex px-2 py-1 w-fit  relative rounded group overflow-hidden font-medium border-b  
-              ${
-                location.pathname == "/"
-                  ? "border-base-200 text-base-200"
-                  : "border-gray-800 text-gray-800"
-              }
+                    border-gray-800 text-gray-800
+              
               `}
                   >
                     <span
-                      className={`absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 ${
-                        location.pathname == "/" ? "bg-base-200" : "bg-gray-800"
-                      } group-hover:h-full opacity-90`}
+                      className={`absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-gray-800 group-hover:h-full opacity-90`}
                     ></span>
                     <span
-                      className={`relative ${
-                        location.pathname == "/"
-                          ? "group-hover:text-gray-800"
-                          : "group-hover:text-white"
-                      }`}
+                      className={`relative group-hover:text-white `}
                     >
                       Login
                     </span>
                   </Link>
                 )}
-              </li> */}
+              </li>
               </ul>
             </OutsideClickHandler>
             {/* responsive menu end    */}
 
             <ul
-              onClick={() => setMenu(false)}
-              className="menu menu-horizontal px-1 md:gap-5  lg:gap-8 hidden  md:flex items-center"
+              
+              className="menu menu-horizontal px-1 md:gap-5  lg:gap-8 hidden  md:flex items-center "
             >
               {navLinks}
 
@@ -375,7 +355,22 @@ export default function NavBar() {
               </div>
          </div>
               }
+
               
+             {/* <li className=" hover:bg-transparent bg- "> 
+             <div className="dropdown dropdown-left dropdown-hover dropdown-bottom relative  " >
+              <div tabIndex={0} role="button" className="  avatar  h-12  w-12 absolute translate-y-2 right-1  ">
+        <div className="w-8 h-8 rounded-full flex items-center justify-center  absolute  right-2 ">
+          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        </div>
+      </div>
+      <ul tabIndex={0} className="mt-7 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+        <li>{user?.displayName || "Anonymous"}</li>
+        <li><a>Logout</a></li>
+      </ul>
+              </div>
+             </li> */}
+
             </ul>
           </div>
         </div>
