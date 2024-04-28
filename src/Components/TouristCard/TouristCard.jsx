@@ -8,7 +8,7 @@ import { AuthContext } from "../../AuthProvider/ContextProvider";
 
 export default function TouristCard({data}) {
     const{theme} = useContext(AuthContext)
-   console.log(data);
+  
     const {photo,spot,country,location,description,cost,_id } = data||[];
   return (
     <>
@@ -67,14 +67,8 @@ export default function TouristCard({data}) {
           data-aos="zoom-in-up"
           data-aos-delay="1800 "
           data-aos-duration="1800"
-          className="mt-2 font-semibold text-[#4b5664] ">$ {cost}</p>
-          {/* <p 
-          data-aos="zoom-in-up"
-          data-aos-delay="1800 "
-          data-aos-duration="1800"
-          className="mt-2 font-semibold text-accent ">
-            For <span>status nai</span>{" "}
-          </p> */}
+          className="mt-2 font-semibold text-[#4b5664] ">${cost} /</p>
+        
         </div>
         <div className="mt-5 ">
           <Link 

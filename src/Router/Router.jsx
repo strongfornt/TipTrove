@@ -40,7 +40,8 @@ import AllTouristSpot from "../Pages/AllTourisstSpot/AllTouristSpot";
         },
         {
             path:'/allTouristSpot',
-            element:<AllTouristSpot/>
+            element:<AllTouristSpot/>,
+            
         }
       ]
     },
