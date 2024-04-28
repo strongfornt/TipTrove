@@ -45,14 +45,14 @@ export default function Login() {
   };
 
   const handleGithubLogin =() =>{
-    //   githubLogin()
-    //   .then(()=>{
-    //     toast.success("You're in! Welcome back!");
-    //   })
-    //   .catch((err)=>{
-    //     toast.error("Sign-in error. Check connection.");
-    //     console.log('github',err)
-    //   })
+      githubLogin()
+      .then(()=>{
+        toast.success("You're in! Welcome back!");
+      })
+      .catch((err)=>{
+        toast.error("Sign-in error. Check connection.");
+        console.log('github',err)
+      })
   }
 
 
