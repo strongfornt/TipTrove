@@ -28,9 +28,7 @@ export default function MyList() {
     }
   }, [user?.email]);
 
-  console.log(user?.email);
-
-  console.log(data);
+  
 
   return (
     <>

@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useContext } from "react"
 import { AuthContext } from "../../AuthProvider/ContextProvider"
+import { Link } from "react-router-dom/dist";
 
 
 export default function MyListCard({data}) {
     const {theme} = useContext(AuthContext)
-    console.log(data);
+    
   return (
     <>
     <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
@@ -54,9 +55,11 @@ export default function MyListCard({data}) {
                         </p>
 					</td>
 					<td className="p-3 text-right">
-						<span className="px-3 py-1 cursor-pointer   font-semibold rounded-md bg-[#fcb040] dark:text-gray-50">
+						<Link 
+                            to={`/updateTouristSpot/${data._id}`}
+                        className="px-3 py-1 cursor-pointer   font-semibold rounded-md bg-[#fcb040] dark:text-gray-50">
 							<span>Update</span>
-						</span>
+						</Link>
 					</td>
 				</tr> )
                 }
