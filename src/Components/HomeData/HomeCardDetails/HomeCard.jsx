@@ -3,11 +3,12 @@ import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";
-import { AuthContext } from "../../AuthProvider/ContextProvider";
+
 import { IoIosTime } from "react-icons/io";
+import { AuthContext } from "../../../AuthProvider/ContextProvider";
 
 
-export default function TouristCard({data}) {
+export default function HomeCard({data}) {
     const{theme} = useContext(AuthContext)
   
     const {photo,spot,country,location,description,cost,_id,time,seasonality,visitor} = data||[];
@@ -50,22 +51,24 @@ export default function TouristCard({data}) {
           data-aos-delay="1400 "
           data-aos-duration="1400"
           className="flex items-center gap-1 ">
-            <IoIosTime className="text-lg text-[#fcb040]" />
+            
+            <FaLocationDot className="text-lg text-[#fcb040]" />
+
             <span className="text-base text-[#4b5664]">
               {" "}
             
-            {time}
+            {location}
             </span>
           </p>
-          <p 
+          {/* <p 
           data-aos="zoom-in-up"
           data-aos-delay="1800 "
           data-aos-duration="1800"
-          className=" font-semibold text-[#4b5664] ">${cost} /</p>
+          className=" font-semibold text-[#4b5664] ">${cost} /</p> */}
         
         </div>
         <div className="flex flex-col    ">
-          <p 
+          {/* <p 
           data-aos="zoom-in-up"
           data-aos-delay="1400 "
           data-aos-duration="1400"
@@ -76,7 +79,7 @@ export default function TouristCard({data}) {
             
             {seasonality}
             </span>
-          </p>
+          </p> */}
           <p 
           data-aos="zoom-in-up"
           data-aos-delay="1800 "

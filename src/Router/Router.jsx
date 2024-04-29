@@ -35,7 +35,7 @@ import UpdateTouristSpot from "../Pages/MyList/UpdateMyList/UpdateTouristSpot";
         },
         {
             path:'/updateProfile',
-            element:<UpdateProfile/>
+            element:<PrivateRoute><UpdateProfile/></PrivateRoute>
         },
         {
             path:'/addTouristSpot',
@@ -56,7 +56,7 @@ import UpdateTouristSpot from "../Pages/MyList/UpdateMyList/UpdateTouristSpot";
         },
         {
             path:'/updateTouristSpot/:id',
-            element:<UpdateTouristSpot/>,
+            element:<PrivateRoute><UpdateTouristSpot/></PrivateRoute>,
             loader:({params})=> fetch(`https://tourism-server-side-blush.vercel.app/touristSpot/${params.id}`)
         }
       ]

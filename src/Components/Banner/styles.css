@@ -1,0 +1,37 @@
+.slide {
+   
+    /* height: 94vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.swiper-pagination-bullet{
+    background-color:white;
+}
+/* .swiper-button-next,
+.swiper-button-prev {
+    background-color: white;
+} */
+
+
+
+.slide1 {
+    background-image: url('./../../assets/photos/bali.jpg');
+}
+.slide2 {
+    background-image: url('./../../assets/photos/Langkawi.jpg');
+}
+.slide3 {
+    background-image: url('./../../assets/photos/yogakarta.jpg');
+}
+/* .slide4 {
+    background-image: url('./../../assets/house/resorts8.jpg');
+}
+.slide5 {
+    background-image: url('./../../assets/house/hotels1.jpg');
+} */

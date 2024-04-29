@@ -23,6 +23,7 @@ import {
     const [user, setUser] = useState(null);
     const [loading,setLoading] = useState(true)
     const [theme,setTheme] = useState("light")
+    const [menu, setMenu] = useState(false);
     
     const createUser = (email, password) => {
       return createUserWithEmailAndPassword(auth, email, password);
@@ -79,7 +80,9 @@ import {
       setUser,
       setLoading,
       theme,
-      setTheme
+      setTheme,
+      menu,
+      setMenu
     };
     return (
       <>

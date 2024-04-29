@@ -169,7 +169,7 @@ export default function AddTouristSpot() {
                 </label>
                 <input
                   required
-                  type="text"
+                  type="number"
                   name="cost"
                   id="cost"
                   placeholder="cost"

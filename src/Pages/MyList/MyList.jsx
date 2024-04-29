@@ -14,6 +14,8 @@ export default function MyList() {
 
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [refetch,setRefetch] = useState(false)
+
 
   useEffect(() => {
     if (user?.email) {
@@ -26,7 +28,7 @@ export default function MyList() {
           setIsLoading(false);
         });
     }
-  }, [user?.email]);
+  }, [user?.email,refetch]);
 
   
 
@@ -69,7 +71,7 @@ export default function MyList() {
           </div>
         ) : data?.length ? (
             <div>
-            <MyListCard data={data} />
+            <MyListCard refetch={refetch}  setRefetch={setRefetch}  data={data} />
         </div>
         ) : (
           <div>
