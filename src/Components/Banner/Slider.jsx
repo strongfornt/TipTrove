@@ -17,7 +17,7 @@ export default function Slider() {
         }}
         pagination={{
           clickable: true,
-          bulletClass: "swiper-pagination-bullet",
+          bulletClass:"swiper-pagination-bullet",
         }}
         keyboard={true}
         autoplay={{
