@@ -15,6 +15,8 @@ import CardDetails from "../Components/TouristCard/CardDetails";
 import MyList from "../Pages/MyList/MyList";
 import UpdateTouristSpot from "../Pages/MyList/UpdateMyList/UpdateTouristSpot";
 
+import CardRequestCountry from "../Components/HomeData/Country/CardRequestCountry";
+
    export const router = createBrowserRouter([
     {
       path: "/",
@@ -23,7 +25,8 @@ import UpdateTouristSpot from "../Pages/MyList/UpdateMyList/UpdateTouristSpot";
       children:[
         {
             path:'/',
-            element:<Home/>
+            element:<Home/>,
+            loader:()=>fetch("https://tourism-server-side-blush.vercel.app/country")
         },
         {
             path:'/register',
@@ -58,6 +61,11 @@ import UpdateTouristSpot from "../Pages/MyList/UpdateMyList/UpdateTouristSpot";
             path:'/updateTouristSpot/:id',
             element:<PrivateRoute><UpdateTouristSpot/></PrivateRoute>,
             loader:({params})=> fetch(`https://tourism-server-side-blush.vercel.app/touristSpot/${params.id}`)
+        },
+        {
+            path:'/countryCard/:country',
+            element:<CardRequestCountry/>,
+            loader:({params}) => fetch(`https://tourism-server-side-blush.vercel.app/country/${params.country}`)
         }
       ]
     },

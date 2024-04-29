@@ -22,7 +22,7 @@ export default function Partnerships() {
       data-aos="zoom-in"
               data-aos-delay="1000 "
               data-aos-duration="1500"
-      className="mt-8    bg-white/80 " >
+      className="mt-4    bg-white/80 " >
         
       <Marquee pauseOnHover={true} >
   <div className=" gap-16 md:gap-32 flex">

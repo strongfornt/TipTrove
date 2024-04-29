@@ -31,7 +31,7 @@ export default function CardDetails() {
   return (
     <>
       <Helmet>
-        <title>TipTrove | cardDetails/{_id}</title>
+        <title>TipTrove | cardDetails</title>
       </Helmet>
       <div className="text-transparent">*</div>
       <div
@@ -73,6 +73,14 @@ export default function CardDetails() {
                 </button>
               </div>
               <div className="space-x-4 sm:space-x-6 my-2 ">
+                 <button
+                  data-aos="zoom-in-right"
+                  data-aos-delay="1600 "
+                  data-aos-duration="1600"
+                  className="px-4 py-1 bg-info rounded-md text-white font-semibold"
+                >
+                  ${cost} / <span className="text-sm text-gray-100">per person</span>
+                </button>
                 <button
                   data-aos="zoom-in-right"
                   data-aos-delay="2000 "
@@ -82,15 +90,7 @@ export default function CardDetails() {
                   Season - {seasonality}
                 </button>
 
-              
-                 <button
-                  data-aos="zoom-in-right"
-                  data-aos-delay="1600 "
-                  data-aos-duration="1600"
-                  className="px-4 py-1 bg-info rounded-md text-white font-semibold"
-                >
-                  ${cost} / <span className="text-sm text-gray-100">per person</span>
-                </button>
+
               </div>
               <div>
                

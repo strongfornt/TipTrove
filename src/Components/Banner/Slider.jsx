@@ -35,7 +35,7 @@ export default function Slider() {
                   Discover{" "}
                   <span className="text-[#fcb040]"> Bali's Beauty!</span>
                 </h1>
-                <p className=" text-base md:text-lg font-bold text-white/85 max-w-screen-md text-center">
+                <p className=" text-base md:text-lg font-bold text-white/85 max-w-screen-md text-center px-2 ">
                   Unwind in Bali's tropical paradise. From pristine beaches to
                   lush rice terraces, immerse yourself in the vibrant culture of
                   Indonesia's most beloved island.

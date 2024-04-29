@@ -7,22 +7,24 @@ import useTanStack from "../../Utils/hooks/useTanStack";
 import Spinner from "../../PagesTwo/Spinner/Spinner";
 import HomeCardSlider from "../../Components/HomeData/HomeCardDetails/HomeCardSlider/HomeCardSlider";
 import CountryCard from "../../Components/HomeData/Country/CountryCard";
-import axios from "axios";
+
+import { useLoaderData } from "react-router-dom/dist";
+import CountryCardDetails from "../../Components/HomeData/Country/CountryCardDetails";
+
 
 export default function Home() {
   const { setMenu, theme } = useContext(AuthContext);
-   const [countryData,setCountryData] = useState([]) 
+  const countryData = useLoaderData()
+
   const { data, isLoading } = useTanStack(
     "https://tourism-server-side-blush.vercel.app/touristSpot",
     "touristSpot"
   );
 
-  useEffect(()=>{
-    axios.get("https://tourism-server-side-blush.vercel.app/country")
-    .then(res => setCountryData(res.data))
-  },[])
+
   
 console.log(countryData);
+
   return (
     <>
       <div onClick={() => setMenu(false)}>
@@ -35,7 +37,7 @@ console.log(countryData);
        Modern & Beautiful
         </h1>
         <p
-          className={` text-3xl md:text-4xl lg:text-5xl text-center mb-8 font-bold  mx-auto ${
+          className={` text-3xl md:text-4xl lg:text-5xl text-center mb-7 md:mb-10 font-bold  mx-auto ${
             theme === "light" ? "text-[#4b5664]" : "text-white"
           }`}
         >
@@ -69,9 +71,21 @@ console.log(countryData);
      
 
 
-      <div className="my-16">
+      <div className="mt-16 mb-8">
         <Partnerships />
       </div>
+
+      {/* <div className="grid grid-cols-3" >
+      {
+        data?.map((data,idx)=> <div key={idx} >
+       
+       <CountryCardDetails data={data} />
+      
+      </div> )
+      }
+      </div> */}
+
+      
 
     </>
   );

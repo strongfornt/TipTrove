@@ -25,6 +25,7 @@ import {
     const [theme,setTheme] = useState("light")
     const [menu, setMenu] = useState(false);
     
+    
     const createUser = (email, password) => {
       return createUserWithEmailAndPassword(auth, email, password);
     };
@@ -83,6 +84,7 @@ import {
       setTheme,
       menu,
       setMenu
+     
     };
     return (
       <>
