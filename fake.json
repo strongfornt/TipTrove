@@ -1,0 +1,33 @@
+[
+    {
+      "image": "https://i.postimg.cc/VLFKsfgv/Bangladesh.jpg",
+      "country_name": "Bangladesh",
+      "short_description": "Experience the rich cultural heritage and natural beauty of Bangladesh. From lush green landscapes to bustling cities."
+    },
+    {
+      "image": "https://i.postimg.cc/zv8BFZQt/Thailand.jpg",
+      "country_name": "Thailand",
+      "short_description": "Discover the enchanting temples, pristine beaches, and vibrant street markets of Thailand. Known as the Land of Smiles."
+    },
+    {
+      "image": "https://i.postimg.cc/Bnqz9hrr/Indonesia.jpg",
+      "country_name": "Indonesia",
+      "short_description": "Explore the diverse archipelago of Indonesia, home to tropical jungles, ancient temples, and exotic wildlife. "
+    },
+    {
+      "image": "https://i.postimg.cc/5yKX4KPs/Malaysia.jpg",
+      "country_name": "Malaysia",
+      "short_description": "Immerse yourself in the cultural melting pot of Malaysia, where modern skyscrapers coexist with ancient rainforests."
+    },
+    {
+      "image": "https://i.postimg.cc/Fs1ZjMQs/Vietnam.jpg",
+      "country_name": "Vietnam",
+      "short_description": "Journey through the breathtaking landscapes and vibrant cities of Vietnam, where history meets natural beauty. "
+    },
+    {
+      "image": "https://i.postimg.cc/4x2np0sZ/Cambodia.jpg",
+      "country_name": "Cambodia",
+      "short_description": "Discover the awe-inspiring temples of Angkor Wat and the charm of rural villages in Cambodia. Known as the Kingdom of Wonder."
+    }
+  ]
+  

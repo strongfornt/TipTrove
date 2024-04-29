@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useRef, useState } from 'react';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FaLocationDot } from "react-icons/fa6";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 import { useContext } from "react";
 
-import { IoIosTime } from "react-icons/io";
+
 
 
 // Import Swiper styles
@@ -30,7 +30,28 @@ export default function HomeCardSlider({data}) {
   return (
     <>
       <Swiper
-        slidesPerView={3}
+       
+        breakpoints={
+          {
+            640: {
+                
+                slidesPerView: 1,
+              },
+              // when window width is >= 768px
+              768: {
+               
+                slidesPerView: 2,
+              },
+              1024:{
+               
+                slidesPerView: 2,
+              },
+              1280: {
+                
+                slidesPerView: 3,
+              },
+          }
+        }
         spaceBetween={30}
         pagination={{
           clickable: true,

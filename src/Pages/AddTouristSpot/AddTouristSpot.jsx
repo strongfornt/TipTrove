@@ -260,7 +260,7 @@ export default function AddTouristSpot() {
                   User Name
                 </label>
                 <input
-                  required
+                  readOnly
                   type="text"
                   name="name"
                   id="name"

@@ -5,7 +5,9 @@ import client3 from './../../../assets/partnarships/client-3.png'
 import client4 from './../../../assets/partnarships/client-4.png'
 import client5 from './../../../assets/partnarships/client-6.png'
 
+
 export default function Partnerships() {
+    
   return (
     <>
     <div className=" last:">
@@ -20,7 +22,7 @@ export default function Partnerships() {
       data-aos="zoom-in"
               data-aos-delay="1000 "
               data-aos-duration="1500"
-      className="mt-5 mb-10 " >
+      className="mt-8    bg-white/80 " >
         
       <Marquee pauseOnHover={true} >
   <div className=" gap-16 md:gap-32 flex">
