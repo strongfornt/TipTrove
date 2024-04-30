@@ -13,6 +13,7 @@ import CountryCard from "../../Components/HomeData/Country/CountryCard";
 import axios from "axios";
 
 import TopReview from "../../Components/TopReview/TopReview";
+import { Fade } from "react-awesome-reveal";
 
 
 export default function Home() {
@@ -43,7 +44,8 @@ export default function Home() {
 
       <div className="my-16 " >
 
-      <h1 className=" mb-2 text-2xl font-semibold text-center   text-[#fcb040] ">
+     <Fade direction="down" triggerOnce={true} delay={200} cascade={false}>
+     <h1 className=" mb-2 text-2xl font-semibold text-center   text-[#fcb040] ">
        Modern & Beautiful
         </h1>
         <p
@@ -53,17 +55,19 @@ export default function Home() {
         >
         Explore the World for Yourself
         </p>
+     </Fade>
           {
             loading ? <Spinner/> :  <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-6  px-2  md:px-4 lg::px-8" >
             {
-             countryData?.map((data,idx) => <CountryCard data={data} key={idx} />)
+             countryData?.map((data,idx) =><CountryCard data={data} key={idx} />)
             }
             </div>
           }
       </div>
 
       <div className="my-16 px-2">
-        <h1 className=" mb-3 text-2xl font-semibold text-center   text-[#fcb040] ">
+      <Fade triggerOnce={false} direction="up" duration={1000} cascade={false} >
+      <h1 className=" mb-3 text-2xl font-semibold text-center   text-[#fcb040] ">
           Nature's Masterpieces
         </h1>
         <p
@@ -75,6 +79,7 @@ export default function Home() {
           waterfalls to vast deserts, each showcasing the power and beauty of
           the natural world.
         </p>
+      </Fade>
         {
             isLoading ? <Spinner/> :<HomeCardSlider data={data} />
         }

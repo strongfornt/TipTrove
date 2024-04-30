@@ -9,6 +9,7 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../AuthProvider/ContextProvider";
+import { Fade } from "react-awesome-reveal";
 
 
 export default function Login() {
@@ -26,7 +27,7 @@ export default function Login() {
     signInUser(email, password)
       .then(() => {
         toast.success("You're in! Welcome back!");
-        
+
       })
       .catch(() => {
         toast.error("invalid password or email");
@@ -80,7 +81,8 @@ export default function Login() {
         className="flex justify-center my-14 "
       >
         <div className="w-full max-w-md p-4 rounded-md shadow-sm sm:p-8 ">
-          <h2
+        <Fade direction="down" duration={1000} cascade={false} triggerOnce={true} >
+        <h2
             data-aos="zoom-in"
             data-aos-delay="500 "
             data-aos-duration="1000"
@@ -99,8 +101,10 @@ export default function Login() {
               Register here
             </Link>
           </p>
+        </Fade>
           <div className="my-6 space-y-3">
-            <button
+           <Fade direction="up" duration={1000} cascade={false} triggerOnce={true} >
+           <button
               onClick={handleGoogleLogin}
               data-aos="zoom-in"
               data-aos-delay="500 "
@@ -131,6 +135,7 @@ export default function Login() {
               </svg>
               <p>Login with GitHub</p>
             </button>
+           </Fade>
           </div>
           <div className="flex items-center w-full my-4">
             <hr className="w-full dark:text-gray-600" />
@@ -139,7 +144,8 @@ export default function Login() {
           </div>
           <form onSubmit={handleFormSubmit} action="" className="space-y-8">
             <div className="space-y-4">
-              <div
+             <Fade direction="up" delay={1000} cascade={false} triggerOnce={true}>
+             <div
                 data-aos="zoom-out-right"
                 data-aos-delay="500 "
                 data-aos-duration="1000"
@@ -178,6 +184,7 @@ export default function Login() {
                   className="w-full px-3 py-2 border rounded-md border-gray-300 bg-transparent outline-none  focus:ring-1 focus:ring-[#fcb040]"
                 />
               </div>
+             </Fade>
             </div>
             <button
               type="submit"

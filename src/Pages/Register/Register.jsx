@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../AuthProvider/ContextProvider";
+import { Fade } from "react-awesome-reveal";
 
 export default function Register() {
   const {createUser,updateUserProfile,theme} = useContext(AuthContext)
@@ -66,7 +67,8 @@ export default function Register() {
       >
         <div className="flex flex-col w-full max-w-md p-6 my-12 rounded-md sm:p-10 shadow-sm ">
           <div className="mb-4 text-center">
-            <h1
+           <Fade direction="down" delay={200} triggerOnce={true} cascade={false} >
+           <h1
               data-aos="zoom-in"
               data-aos-delay="500 "
               data-aos-duration="1000"
@@ -83,6 +85,7 @@ export default function Register() {
             >
               Register now and be part of our community!
             </p>
+           </Fade>
           </div>
           <form
             onSubmit={handleSubmit(formSubmit)}
@@ -90,7 +93,8 @@ export default function Register() {
             className="space-y-10"
           >
             <div className="space-y-4">
-              <div
+             <Fade direction="up" delay={300} triggerOnce={true} cascade={false}>
+             <div
                 data-aos="zoom-in"
                 data-aos-delay="500 "
                 data-aos-duration="1000"
@@ -184,6 +188,7 @@ export default function Register() {
                   {passToggle ? <IoEyeOutline /> : <FaRegEyeSlash />}
                 </button>
               </div>
+             </Fade>
             </div>
             <div className="space-y-2">
               <div>
