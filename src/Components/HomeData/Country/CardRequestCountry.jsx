@@ -3,6 +3,7 @@ import CountryCardDetails from "./CountryCardDetails";
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/ContextProvider";
 import NotFoundData from "../../NotFoundData/NotFoundData";
+import { Fade } from "react-awesome-reveal";
 
 
 export default function CardRequestCountry() {
@@ -14,7 +15,8 @@ console.log(data[0]?.country);
     <>
       <div className="text-transparent">*</div>
       <div className="px-2 my-16">
-      <h1 className={`mb-3 text-3xl font-semibold text-center   ${theme ==="light"?'text-[#4b5664]':'text-white'}`}>
+     <Fade triggerOnce={true} cascade={false} delay={300} direction="down" >
+     <h1 className={`mb-3 text-3xl font-semibold text-center   ${theme ==="light"?'text-[#4b5664]':'text-white'}`}>
              Explore <span className="text-[#fcb040]" >{data[0]?.country}'s Best!</span>
         </h1>
         <p
@@ -24,6 +26,7 @@ console.log(data[0]?.country);
         >
            Dive into the heart of adventure and discovery with a curated selection of tourist spots from {data[0]?.country} .
         </p>
+     </Fade>
         <div
           className={`${
             data?.length <= 2

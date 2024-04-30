@@ -144,7 +144,7 @@ export default function Login() {
           </div>
           <form onSubmit={handleFormSubmit} action="" className="space-y-8">
             <div className="space-y-4">
-             <Fade direction="up" delay={1000} cascade={false} triggerOnce={true}>
+             <Fade direction="up" delay={500} cascade={false} triggerOnce={true}>
              <div
                 data-aos="zoom-out-right"
                 data-aos-delay="500 "

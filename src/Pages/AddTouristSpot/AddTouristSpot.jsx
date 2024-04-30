@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { AuthContext } from "../../AuthProvider/ContextProvider";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { Fade } from "react-awesome-reveal";
 
 export default function AddTouristSpot() {
   const { user, theme } = useContext(AuthContext);
@@ -71,7 +72,8 @@ export default function AddTouristSpot() {
         >
           <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-base-100">
             <div className="space-y-2 col-span-full lg:col-span-1">
-              <p className="font-medium text-lg text-[#fcb040] ">
+             <Fade direction="up" delay={200} cascade={false} triggerOnce={true}>
+             <p className="font-medium text-lg text-[#fcb040] ">
                 <span
                   className={`${
                     theme == "light" ? "text-[#4b5664]" : "text-white"
@@ -90,6 +92,7 @@ export default function AddTouristSpot() {
                 destinations. Inspire fellow travelers with your favorite spots
                 and hidden gems.
               </p>
+             </Fade>
             </div>
             <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
               <div className="col-span-full sm:col-span-3">
@@ -219,7 +222,8 @@ export default function AddTouristSpot() {
           </fieldset>
           <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-base-100">
             <div className="space-y-2 col-span-full lg:col-span-1">
-              <p className="font-medium text-lg text-[#fcb040] ">
+             <Fade direction="up" delay={200} cascade={false} triggerOnce={true} >
+             <p className="font-medium text-lg text-[#fcb040] ">
                 <span
                   className={`${
                     theme == "light" ? "text-[#4b5664]" : "text-white"
@@ -239,6 +243,7 @@ export default function AddTouristSpot() {
                 details. Help us tailor recommendations and connect you with
                 like-minded adventurers.
               </p>
+             </Fade>
             </div>
             <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
               <div className="col-span-full sm:col-span-3">

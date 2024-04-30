@@ -169,7 +169,7 @@ export default function Footer() {
                 >
                     <FaPhoneAlt className="text-[#fcb040]" />
                   <a rel="noopener noreferrer" className="ml-2" href="#">
-                    123456789
+                    13-543-135
                   </a>
                 </li>
                 <li

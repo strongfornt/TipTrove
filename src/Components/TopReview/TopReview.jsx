@@ -8,13 +8,13 @@ export default function TopReview() {
       <section className=" dark:text-gray-800">
         <div className="container min-w-full flex flex-col relative justify-center  mx-auto  lg:flex-row lg:justify-between">
           <div
-            className="flex items-center bg-center bg-cover justify-center absolute lg:static z-30   w-full   lg:mt-0 h-96 xl:h-112 2xl:h-128"
+            className="flex items-center bg-center bg-cover justify-center absolute lg:static -z-10   w-full   lg:mt-0 h-96 xl:h-112 2xl:h-128"
             style={{ backgroundImage: `url(${banner})` }}
           >
             <div className="h-full w-full bg-black/35 lg:bg-black/15"></div>
           </div>
           <div
-            className="flex flex-col justify-center h-96 xl:h-112 2xl:h-128     mt-16 lg:mt-0  z-30  text-center rounded-sm  bg-cover bg-center   w-full lg:text-left"
+            className="flex flex-col justify-center h-96 xl:h-112 2xl:h-128     mt-16 lg:mt-0  z-10  text-center rounded-sm  bg-cover bg-center   w-full lg:text-left"
             style={{ backgroundImage: `url(${bg})` }}
           >
             <div className=" h-full  bg-black/35 ">

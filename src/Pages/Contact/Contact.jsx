@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import { Helmet } from "react-helmet-async";
 
 export default function Contact() {
@@ -14,18 +15,22 @@ export default function Contact() {
         <section className="py-6  w-full">
           <div className="grid   grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
             <div className="py-6 md:py-0 md:px-6 ">
-              <h1 
+            <Fade direction="down" triggerOnce={true} cascade={false} delay={300} >
+            <h1 
               data-aos="zoom-in" data-aos-delay="500 " data-aos-duration="1000" 
               className="text-4xl font-bold ">
                 Get in <span className="text-[#fcb040]">touch</span>
               </h1>
-              <p 
+            
+            </Fade>
+            <p 
               data-aos="zoom-in" data-aos-delay="500 " data-aos-duration="1000"
               className="pt-2 pb-4">
              Got questions or feedback? Reach out to us! Our contact page is your gateway to seamless communication. Whether you're seeking travel advice, partnership opportunities, or just want to say hello, we're here to help.
               </p>
               <div className="space-y-4">
-                <p className="flex items-center">
+               <Fade direction="down" triggerOnce={true} cascade={false} delay={300} >
+               <p className="flex items-center">
                   <svg
                  data-aos="zoom-in-up" data-aos-delay="500 " data-aos-duration="1000"
                     xmlns="http://www.w3.org/2000/svg"
@@ -66,9 +71,11 @@ export default function Contact() {
                   </svg>
                   <span  data-aos="zoom-in-left" data-aos-delay="500 " data-aos-duration="1000" >contact@tiptrove.com</span>
                 </p>
+               </Fade>
               </div>
             </div>
             <form className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+              <Fade direction="up" triggerOnce={true} cascade={false} delay={300} >
               <label data-aos="zoom-in" data-aos-delay="500 " data-aos-duration="1000" className="block">
                 <span className="mb-1">Full name</span>
                 <input
@@ -93,6 +100,7 @@ export default function Contact() {
                   className="block w-full pl-2 rounded-md outline-none bg-transparent ring-1 ring-gray-300 focus:ring-1 focus:ring-opacity-75 focus:ring-[#fcb040]"
                 ></textarea>
               </label>
+              </Fade>
 
               <div>
                 <button

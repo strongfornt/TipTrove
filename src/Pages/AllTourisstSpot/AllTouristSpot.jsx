@@ -4,6 +4,7 @@ import { AuthContext } from "../../AuthProvider/ContextProvider";
 import TouristCard from "../../Components/TouristCard/TouristCard";
 import useTanStack from "../../Utils/hooks/useTanStack";
 import Spinner from "../../PagesTwo/Spinner/Spinner";
+import { Fade } from "react-awesome-reveal";
 
 
 export default function AllTouristSpot() {
@@ -35,7 +36,8 @@ export default function AllTouristSpot() {
       <div className="text-transparent">*</div>
 
       <div className="my-20 px-2 ">
-        <h1 className=" mb-3 text-2xl font-semibold text-center   text-[#fcb040] ">
+      <Fade direction="down" delay={200} triggerOnce={true} cascade={false} >
+      <h1 className=" mb-3 text-2xl font-semibold text-center   text-[#fcb040] ">
           Explore Spectacular Tourist Spots
         </h1>
         <p
@@ -48,6 +50,7 @@ export default function AllTouristSpot() {
           culture, and awe-inspiring beauty of the world's most renowned tourist
           destinations.
         </p>
+      </Fade>
 
         <div className="mx-auto flex items-center justify-center my-10">
           <ul className="menu menu-horizontal px-1">
@@ -69,7 +72,7 @@ export default function AllTouristSpot() {
         ) : (
          <div className="my-16  grid gap-6 md:grid-cols-2  lg:grid-cols-2 xl:grid-cols-3 lg:gap-6">
             {data?.map((data, idx) => (
-              <TouristCard data={data} key={idx} />
+              <Fade key={idx} direction="up" delay={200} triggerOnce={true} cascade={false}  ><TouristCard data={data}  /></Fade>
             ))}
           </div>
         )}

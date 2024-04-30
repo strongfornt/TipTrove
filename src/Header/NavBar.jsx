@@ -64,29 +64,18 @@ export default function NavBar() {
 
   const responsiveNavLinks = (
     <>
-    
-      <NavLink
+     <NavLink
         onClick={() => setMenu(false)}
-        to="/register"
+        to="/"
         className={({ isActive }) =>
           isActive
             ? ` text-[#fcb040] w-fit text-sm font-medium  `
             : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
         }
       >
-        <p className="">Register</p>
+        <p className="">Home</p>
       </NavLink>
-      <NavLink
-        onClick={() => setMenu(false)}
-        to="/Login"
-        className={({ isActive }) =>
-          isActive
-            ? ` text-[#fcb040] w-fit text-sm font-medium  `
-            : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
-        }
-      >
-        <p className="">Login</p>
-      </NavLink>
+      
 
       <NavLink
         onClick={() => setMenu(false)}
@@ -99,8 +88,7 @@ export default function NavBar() {
       >
         <p className="">AllTouristSpot</p>
       </NavLink>
-      {
-        user && <NavLink
+      <NavLink
         onClick={() => setMenu(false)}
         to="/addTouristSpot"
         className={({ isActive }) =>
@@ -111,8 +99,7 @@ export default function NavBar() {
       >
         <p className="">AddTouristSpot</p>
       </NavLink>
-      }
-      {user && <NavLink
+      <NavLink
       onClick={() => setMenu(false)}
         to="/myList"
         className={({ isActive }) =>
@@ -122,7 +109,7 @@ export default function NavBar() {
         }
       >
         <p className="">MyList</p>
-      </NavLink>}
+      </NavLink>
       {
         user &&<NavLink
         onClick={() => setMenu(false)}
@@ -167,38 +154,7 @@ export default function NavBar() {
         <p className="">Home</p>
       </NavLink>
      
-      <NavLink
-        onClick={() => {
-          setMenu(false);
-          
-        }}
-        to="/register"
-        className={({ isActive }) =>
-          isActive
-            ? ` text-[#fcb040] w-fit text-sm font-medium  `
-            : `text-sm w-fit ${
-                location.pathname === "/" && scrollY < 199 && "text-white"
-              }  font-medium hover:text-[#fcb040] duration-300 `
-        }
-      >
-        <p className="">Register</p>
-      </NavLink>
-      <NavLink
-        onClick={() => {
-          setMenu(false);
-         
-        }}
-        to="/Login"
-        className={({ isActive }) =>
-          isActive
-            ? ` text-[#fcb040] w-fit text-sm font-medium  `
-            : `text-sm w-fit ${
-                location.pathname === "/" && scrollY < 199 && "text-white"
-              }  font-medium hover:text-[#fcb040] duration-300 `
-        }
-      >
-        <p className="">Login</p>
-      </NavLink>
+ 
       <NavLink
                     onClick={() => {
                       setMenu(false);
@@ -217,25 +173,7 @@ export default function NavBar() {
                   >
                     <p className="">AllTouristSpot</p>
                   </NavLink>
-                  {
-                    loading ? <NavLink
-                    onClick={() => {
-                      setMenu(false);
-                      
-                    }}
-                    to="/addTouristSpot"
-                    className={({ isActive }) =>
-                      isActive
-                        ? ` text-[#fcb040] w-fit text-sm font-medium  `
-                        : `text-sm w-fit  ${
-                            location.pathname === "/" &&
-                            scrollY < 199 &&
-                            "text-white"
-                          } font-medium hover:text-[#fcb040] duration-300 `
-                    }
-                  >
-                    <p className="">AddTouristSpot</p>
-                  </NavLink> : user && <NavLink
+                  <NavLink
                     onClick={() => {
                       setMenu(false);
                       
@@ -253,26 +191,7 @@ export default function NavBar() {
                   >
                     <p className="">AddTouristSpot</p>
                   </NavLink> 
-                  }
-                  {
-                   loading ?  <NavLink
-                   onClick={() => {
-                     setMenu(false);
-                   
-                   }}
-                   to="/myList"
-                   className={({ isActive }) =>
-                     isActive
-                       ? ` text-[#fcb040] w-fit text-sm font-medium  `
-                       : `text-sm w-fit ${
-                           location.pathname === "/" &&
-                           scrollY < 199 &&
-                           "text-white"
-                         }  font-medium hover:text-[#fcb040] duration-300 `
-                   }
-                 >
-                   <p className="">MyList</p>
-                 </NavLink>   : user  && <NavLink
+                  <NavLink
                     onClick={() => {
                       setMenu(false);
                     
@@ -290,7 +209,6 @@ export default function NavBar() {
                   >
                     <p className="">MyList</p>
                   </NavLink> 
-                  }
                   <NavLink
                     onClick={() => {
                       setMenu(false);
@@ -522,10 +440,11 @@ export default function NavBar() {
                       </span>
                     </button>
                   ) : (
-                    <Link
+                    <>
+                       <Link
                       to="/login"
                       onClick={() => setMenu(false)}
-                      className={`flex px-2 py-1 w-fit  relative rounded group overflow-hidden font-medium border-b  
+                      className={`flex px-6  py-1 w-fit mb-4 relative rounded group overflow-hidden font-medium border-b  
                       ${
                         theme === "light"
                           ? "border-gray-800 text-gray-800"
@@ -548,14 +467,42 @@ export default function NavBar() {
                       >
                         Login
                       </span>
+                    </Link> 
+                    <Link
+                      to="/register"
+                      onClick={() => setMenu(false)}
+                      className={`flex px-4 py-1 w-fit  relative rounded group overflow-hidden font-medium border-b  
+                      ${
+                        theme === "light"
+                          ? "border-gray-800 text-gray-800"
+                          : "border-gray-50 text-white"
+                      }
+              
+              `}
+                    >
+                      <span
+                        className={`absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0  ${
+                          theme === "light" ? "bg-gray-800" : "bg-gray-50"
+                        } group-hover:h-full opacity-90`}
+                      ></span>
+                      <span
+                        className={`relative ${
+                          theme === "light"
+                            ? "group-hover:text-white"
+                            : "group-hover:text-black"
+                        }  `}
+                      >
+                        Register
+                      </span>
                     </Link>
+                    </>
                   )}
                 </li>
               </ul>
             </OutsideClickHandler>
             {/* responsive menu end    */}
 
-            <ul className="menu menu-horizontal px-1 py-0 h-16 md:gap-3  lg:gap-8 hidden  md:flex items-center ">
+            <ul className="menu menu-horizontal px-1 py-0 h-16 md:gap-8 hidden  md:flex items-center ">
           
 
               

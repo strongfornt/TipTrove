@@ -5,6 +5,7 @@ import { Link } from "react-router-dom/dist";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
 
 export default function MyListCard({ data, setRefetch, refetch }) {
   const { theme } = useContext(AuthContext);
@@ -44,6 +45,7 @@ export default function MyListCard({ data, setRefetch, refetch }) {
     <>
       <Toaster />
       <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
+        <Fade direction="down" delay={200} triggerOnce={true}  cascade={false}>
         <h2
           className={`mb-4 text-2xl font-semibold leading-tight ${
             theme === "light" ? "text-black" : "text-white"
@@ -51,6 +53,7 @@ export default function MyListCard({ data, setRefetch, refetch }) {
         >
           Tourist Spots
         </h2>
+        </Fade>
         <div className="overflow-x-auto">
           <table className="min-w-full text-xs">
             <colgroup>

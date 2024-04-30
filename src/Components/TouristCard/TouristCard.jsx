@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/ContextProvider";
 import { IoIosTime } from "react-icons/io";
+import { Fade } from "react-awesome-reveal";
 
 
 export default function TouristCard({data}) {
@@ -28,7 +29,8 @@ export default function TouristCard({data}) {
         />
        </div>
         <div className="mt-6 mb-2">
-          <span 
+        <Fade direction="up" delay={200} triggerOnce={true} cascade={false} >
+        <span 
           data-aos="zoom-in-up"
           data-aos-delay="1000 "
           data-aos-duration="1200"
@@ -42,10 +44,12 @@ export default function TouristCard({data}) {
           className="text-xl font-semibold tracking-wide text-[#4b5664] ">
           {country}
           </h2>
+        </Fade>
           
 
           <div className="flex justify-between items-center ">
-          <p 
+         <Fade direction="up" delay={200} cascade={true} triggerOnce={true}>
+         <p 
           data-aos="zoom-in-up"
           data-aos-delay="1400 "
           data-aos-duration="1400"
@@ -62,10 +66,12 @@ export default function TouristCard({data}) {
           data-aos-delay="1800 "
           data-aos-duration="1800"
           className=" font-semibold text-[#4b5664] ">${cost} /</p>
+         </Fade>
         
         </div>
         <div className="flex flex-col    ">
-          <p 
+         <Fade direction="up" delay={200} cascade={true} triggerOnce={true} >
+         <p 
           data-aos="zoom-in-up"
           data-aos-delay="1400 "
           data-aos-duration="1400"
@@ -82,16 +88,19 @@ export default function TouristCard({data}) {
           data-aos-delay="1800 "
           data-aos-duration="1800"
           className=" font-semibold text-[#4b5664] ">Visitor - <span className="font-normal" >{visitor} /y</span> </p>
+         </Fade>
         
         </div>
         </div>
-        <p 
+       <Fade direction="up" delay={200} cascade={true} triggerOnce={true} >
+       <p 
         data-aos="zoom-in-up"
         data-aos-delay="1600 "
         data-aos-duration="1600"
         className="text-[#4b5664] text-sm  ">
        {description.slice(0,90)}...
         </p>
+       </Fade>
 
        
         

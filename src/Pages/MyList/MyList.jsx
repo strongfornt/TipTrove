@@ -8,6 +8,7 @@ import Spinner from "../../PagesTwo/Spinner/Spinner";
 
 import axios from "axios";
 import MyListCard from "./MyListCard";
+import { Fade } from "react-awesome-reveal";
 
 export default function MyList() {
   const { theme, user } = useContext(AuthContext);
@@ -43,7 +44,8 @@ export default function MyList() {
       <div className="my-20 px-4 md:px-8">
         {/* title start */}
         <div className="flex flex-col justify-center items-center gap-2 mb-3">
-          <h1
+        <Fade direction="down" cascade={true} triggerOnce={true} delay={200}>
+        <h1
             className={`text-xl ${
               theme === "light" ? "text-[#4b5664]" : "text-white"
             } font-medium `}
@@ -59,6 +61,7 @@ export default function MyList() {
             Your Global Gallery Awaits! Browse Your Exclusive Collection of
             Tourist spots.
           </p>
+        </Fade>
         </div>
 
         {/* title end */}
