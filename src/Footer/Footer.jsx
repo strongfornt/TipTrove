@@ -67,7 +67,7 @@ export default function Footer() {
                   className="text-[#d4cccc]"
                 >
                  
-                    Featured
+                    Top Reviews 
                  
                 </li>
 
@@ -123,7 +123,7 @@ export default function Footer() {
                   data-aos-duration="1800"
                   className="hover:text-[#fcb040] duration-300"
                 >
-                  <Link to="/GetTouch">Get In Touch</Link>
+                  <Link to="/contact">Get In Touch</Link>
                 </li>
               </ul>
             </div>

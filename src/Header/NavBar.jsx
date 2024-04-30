@@ -64,7 +64,7 @@ export default function NavBar() {
 
   const responsiveNavLinks = (
     <>
-    <Toaster/>
+    
       <NavLink
         onClick={() => setMenu(false)}
         to="/register"
@@ -113,6 +113,7 @@ export default function NavBar() {
       </NavLink>
       }
       {user && <NavLink
+      onClick={() => setMenu(false)}
         to="/myList"
         className={({ isActive }) =>
           isActive
@@ -123,43 +124,29 @@ export default function NavBar() {
         <p className="">MyList</p>
       </NavLink>}
       {
-        user && <NavLink
-        onClick={() => {
-          setMenu(false);
-         
-        }}
+        user &&<NavLink
+        onClick={() => setMenu(false)}
         to="/updateProfile"
         className={({ isActive }) =>
           isActive
-            ? ` text-[#fcb040] w-fit text-sm   `
-            : `text-sm w-fit ${
-                location.pathname === "/" &&
-                scrollY < 199 &&
-                "text-white"
-              }   hover:text-[#fcb040] duration-300 `
+            ? ` text-[#fcb040] w-fit text-sm font-medium  `
+            : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
         }
       >
-        <p className="">Update profile</p>
+        <p className="">Update Profile</p>
       </NavLink>
       }
-       <NavLink
-                    onClick={() => {
-                      setMenu(false);
-                     
-                    }}
-                    to="/contact"
-                    className={({ isActive }) =>
-                      isActive
-                        ? ` text-[#fcb040] w-fit text-sm font-medium  `
-                        : `text-sm w-fit ${
-                            location.pathname === "/" &&
-                            scrollY < 199 &&
-                            "text-white"
-                          }  font-medium hover:text-[#fcb040] duration-300 `
-                    }
-                  >
-                    <p className="">Contact</p>
-                  </NavLink>
+ <NavLink
+        onClick={() => setMenu(false)}
+        to="/contact"
+        className={({ isActive }) =>
+          isActive
+            ? ` text-[#fcb040] w-fit text-sm font-medium  `
+            : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
+        }
+      >
+        <p className="">Contact</p> 
+        </NavLink>
     </>
   );
 
@@ -328,6 +315,7 @@ export default function NavBar() {
 
   return (
     <>
+    <Toaster/>
       <header className="relative  z-30 ">
         <div
           className={`navbar px-2 py-0  md:px-4 lg:8  ${
