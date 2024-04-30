@@ -14,7 +14,7 @@ export default function TopReview() {
             <div className="h-full w-full bg-black/35 lg:bg-black/15"></div>
           </div>
           <div
-            className="flex flex-col justify-center h-96 xl:h-112 2xl:h-128     mt-12 lg:mt-0  z-30  text-center rounded-sm  bg-cover bg-center   w-full lg:text-left"
+            className="flex flex-col justify-center h-96 xl:h-112 2xl:h-128     mt-16 lg:mt-0  z-30  text-center rounded-sm  bg-cover bg-center   w-full lg:text-left"
             style={{ backgroundImage: `url(${bg})` }}
           >
             <div className=" h-full  bg-black/35 ">

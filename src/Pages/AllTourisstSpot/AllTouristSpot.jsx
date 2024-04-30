@@ -34,7 +34,7 @@ export default function AllTouristSpot() {
 
       <div className="text-transparent">*</div>
 
-      <div className="my-20 px-2     ">
+      <div className="my-20 px-2 ">
         <h1 className=" mb-3 text-2xl font-semibold text-center   text-[#fcb040] ">
           Explore Spectacular Tourist Spots
         </h1>
