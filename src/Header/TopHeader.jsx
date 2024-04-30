@@ -8,7 +8,7 @@ import { useContext, useState } from "react";
 export default function TopHeader() {
     
     
-  const { user, loading,theme,setTheme } = useContext(AuthContext);
+  const { user, loading,theme,setTheme ,setMenu} = useContext(AuthContext);
 
   const handleTheme = (e) => {
     if (e.target.checked) {
@@ -95,12 +95,12 @@ export default function TopHeader() {
             </div>
           ) : (
             <>
-              <Link to="/login">
+              <Link onClick={()=>setMenu(false)} to="/login">
                 <p className="text-[#fdfcfc] font-medium text-[12px]   hover:text-yellow-300 duration-300 ">
                   Login
                 </p>
               </Link>
-              <Link to="/register">
+              <Link onClick={()=>setMenu(false)}  to="/register">
                 <p className="text-[#fdfcfc] font-medium text-[12px]  hover:text-yellow-300 duration-300 ">
                   Register
                 </p>
