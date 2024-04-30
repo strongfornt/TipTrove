@@ -120,11 +120,11 @@ export default function TopReviewSlider() {
             </div>
             <div className="flex flex-col justify-center items-center gap-1">
               <h1 className="text-base text-white font-semibold">
-                Ahsan Ullah
+                Halil pasha
               </h1>
               <div className="avatar">
                 <div className="w-12 rounded-full">
-                  <img src="https://lh3.googleusercontent.com/a/ACg8ocLeOiZZmyCNk0XEGrOfOTx0oEgCqrtAvyml-8dcu46b1Lkr8P0s=s96-c" />
+                  <img src="https://i.postimg.cc/XY81wR9N/profile-Three.jpg" />
                 </div>
               </div>
             </div>
@@ -173,11 +173,11 @@ export default function TopReviewSlider() {
             </div>
             <div className="flex flex-col justify-center items-center gap-1">
               <h1 className="text-base text-white font-semibold">
-                Ahsan Ullah
+                Bali Bey
               </h1>
               <div className="avatar">
                 <div className="w-12 rounded-full">
-                  <img src="https://lh3.googleusercontent.com/a/ACg8ocLeOiZZmyCNk0XEGrOfOTx0oEgCqrtAvyml-8dcu46b1Lkr8P0s=s96-c" />
+                  <img src="https://i.postimg.cc/2y5GzyVP/profile-Two.jpg" />
                 </div>
               </div>
             </div>

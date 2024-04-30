@@ -8,10 +8,10 @@ import Spinner from "../../PagesTwo/Spinner/Spinner";
 import HomeCardSlider from "../../Components/HomeData/HomeCardDetails/HomeCardSlider/HomeCardSlider";
 import CountryCard from "../../Components/HomeData/Country/CountryCard";
 
-import { useLoaderData } from "react-router-dom/dist";
-import CountryCardDetails from "../../Components/HomeData/Country/CountryCardDetails";
+
+
 import axios from "axios";
-import Faq from "../../Components/HomeData/Faq/Faq";
+
 import TopReview from "../../Components/TopReview/TopReview";
 
 
@@ -33,7 +33,7 @@ export default function Home() {
  },[])
 
   
-console.log(countryData);
+
 
   return (
     <>
@@ -81,9 +81,7 @@ console.log(countryData);
       </div>
 
      
-    {/* <div className="my-16 px-4" >
-        <Faq/>
-    </div> */}
+    
     <div className="my-16 ">
         <TopReview/>
     </div>

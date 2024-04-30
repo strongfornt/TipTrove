@@ -8,12 +8,18 @@ import { calculateScrollbarWidth } from "./ScrollBar";
 import OutsideClickHandler from "react-outside-click-handler";
 import { SiReactrouter } from "react-icons/si";
 import { AuthContext } from "../AuthProvider/ContextProvider";
+import {  IoMdArrowDropup } from "react-icons/io";
+import { MdBrowserUpdated, MdLogout } from "react-icons/md";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 export default function NavBar() {
   const [scrollY, setScrollY] = useState(0);
-  
-  const { user, loading, logOut, theme, setTheme,menu,setMenu } = useContext(AuthContext);
+
+  const { user, loading, logOut, theme, setTheme, menu, setMenu } =
+    useContext(AuthContext);
   const location = useLocation();
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,8 +34,10 @@ export default function NavBar() {
 
   const handleLogout = () => {
     logOut()
-      .then(() => console.log("log out "))
-      .catch(() => console.log("something is wrong"));
+      .then(() => {
+        toast("See you soon!")
+      })
+      
   };
 
   useEffect(() => {
@@ -54,92 +62,129 @@ export default function NavBar() {
     }
   };
 
-    const responsiveNavLinks = (
-      <>
-        <NavLink
-          onClick={() => setMenu(false)}
-          to="/"
-          className={({ isActive }) =>
-            isActive
-              ? ` text-[#fcb040] w-fit text-sm font-medium  `
-              : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300  `
-          }
-        >
-          <p className="">Home</p>
-        </NavLink>
-        <NavLink
-          onClick={() => setMenu(false)}
-          to="/register"
-          className={({ isActive }) =>
-            isActive
-              ? ` text-[#fcb040] w-fit text-sm font-medium  `
-              : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
-          }
-        >
-          <p className="">Register</p>
-        </NavLink>
-        <NavLink
-          onClick={() => setMenu(false)}
-          to="/Login"
-          className={({ isActive }) =>
-            isActive
-              ? ` text-[#fcb040] w-fit text-sm font-medium  `
-              : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
-          }
-        >
-          <p className="">Login</p>
-        </NavLink>
+  const responsiveNavLinks = (
+    <>
+    <Toaster/>
+      <NavLink
+        onClick={() => setMenu(false)}
+        to="/register"
+        className={({ isActive }) =>
+          isActive
+            ? ` text-[#fcb040] w-fit text-sm font-medium  `
+            : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
+        }
+      >
+        <p className="">Register</p>
+      </NavLink>
+      <NavLink
+        onClick={() => setMenu(false)}
+        to="/Login"
+        className={({ isActive }) =>
+          isActive
+            ? ` text-[#fcb040] w-fit text-sm font-medium  `
+            : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
+        }
+      >
+        <p className="">Login</p>
+      </NavLink>
 
-        <NavLink
-          onClick={() => setMenu(false)}
-          to="/allTouristSpot"
-          className={({ isActive }) =>
-            isActive
-              ? ` text-[#fcb040] w-fit text-sm font-medium  `
-              : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
-          }
-        >
-          <p className="">AllTouristSpot</p>
-        </NavLink>
-        <NavLink
-          onClick={() => setMenu(false)}
-          to="/addTouristSpot"
-          className={({ isActive }) =>
-            isActive
-              ? ` text-[#fcb040] w-fit text-sm font-medium  `
-              : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
-          }
-        >
-          <p className="">AddTouristSpot</p>
-        </NavLink>
-        <NavLink
-          to="/myList"
-          className={({ isActive }) =>
-            isActive
-              ? ` text-[#fcb040] w-fit text-sm font-medium  `
-              : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
-          }
-        >
-          <p className="">MyList</p>
-        </NavLink>
-      </>
-    );
+      <NavLink
+        onClick={() => setMenu(false)}
+        to="/allTouristSpot"
+        className={({ isActive }) =>
+          isActive
+            ? ` text-[#fcb040] w-fit text-sm font-medium  `
+            : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
+        }
+      >
+        <p className="">AllTouristSpot</p>
+      </NavLink>
+      {
+        user && <NavLink
+        onClick={() => setMenu(false)}
+        to="/addTouristSpot"
+        className={({ isActive }) =>
+          isActive
+            ? ` text-[#fcb040] w-fit text-sm font-medium  `
+            : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
+        }
+      >
+        <p className="">AddTouristSpot</p>
+      </NavLink>
+      }
+      {user && <NavLink
+        to="/myList"
+        className={({ isActive }) =>
+          isActive
+            ? ` text-[#fcb040] w-fit text-sm font-medium  `
+            : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300 `
+        }
+      >
+        <p className="">MyList</p>
+      </NavLink>}
+      {
+        user && <NavLink
+        onClick={() => {
+          setMenu(false);
+         
+        }}
+        to="/updateProfile"
+        className={({ isActive }) =>
+          isActive
+            ? ` text-[#fcb040] w-fit text-sm   `
+            : `text-sm w-fit ${
+                location.pathname === "/" &&
+                scrollY < 199 &&
+                "text-white"
+              }   hover:text-[#fcb040] duration-300 `
+        }
+      >
+        <p className="">Update profile</p>
+      </NavLink>
+      }
+       <NavLink
+                    onClick={() => {
+                      setMenu(false);
+                     
+                    }}
+                    to="/contact"
+                    className={({ isActive }) =>
+                      isActive
+                        ? ` text-[#fcb040] w-fit text-sm font-medium  `
+                        : `text-sm w-fit ${
+                            location.pathname === "/" &&
+                            scrollY < 199 &&
+                            "text-white"
+                          }  font-medium hover:text-[#fcb040] duration-300 `
+                    }
+                  >
+                    <p className="">Contact</p>
+                  </NavLink>
+    </>
+  );
 
   const navLinks = (
     <>
       <NavLink
-        onClick={() => setMenu(false)}
+        onClick={() => {
+          setMenu(false);
+         
+        }}
         to="/"
         className={({ isActive }) =>
           isActive
-            ? ` text-[#fcb040] w-fit text-sm font-medium  `
-            : `text-sm w-fit  font-medium hover:text-[#fcb040] duration-300  `
+            ? ` text-[#fcb040] w-fit  text-sm font-medium  `
+            : `text-sm w-fit  font-medium  hover:text-[#fcb040] duration-300  `
         }
       >
         <p className="">Home</p>
       </NavLink>
+     
       <NavLink
-        onClick={() => setMenu(false)}
+        onClick={() => {
+          setMenu(false);
+          
+        }}
         to="/register"
         className={({ isActive }) =>
           isActive
@@ -152,7 +197,10 @@ export default function NavBar() {
         <p className="">Register</p>
       </NavLink>
       <NavLink
-        onClick={() => setMenu(false)}
+        onClick={() => {
+          setMenu(false);
+         
+        }}
         to="/Login"
         className={({ isActive }) =>
           isActive
@@ -164,53 +212,125 @@ export default function NavBar() {
       >
         <p className="">Login</p>
       </NavLink>
-
       <NavLink
-        onClick={() => setMenu(false)}
-        to="/allTouristSpot"
-        className={({ isActive }) =>
-          isActive
-            ? ` text-[#fcb040] w-fit text-sm font-medium  `
-            : `text-sm w-fit ${
-                location.pathname === "/" && scrollY < 199 && "text-white"
-              }  font-medium hover:text-[#fcb040] duration-300 `
-        }
-      >
-        <p className="">AllTouristSpot</p>
-      </NavLink>
-      <NavLink
-        onClick={() => setMenu(false)}
-        to="/addTouristSpot"
-        className={({ isActive }) =>
-          isActive
-            ? ` text-[#fcb040] w-fit text-sm font-medium  `
-            : `text-sm w-fit  ${
-                location.pathname === "/" && scrollY < 199 && "text-white"
-              } font-medium hover:text-[#fcb040] duration-300 `
-        }
-      >
-        <p className="">AddTouristSpot</p>
-      </NavLink>
-      <NavLink
-        to="/myList"
-        className={({ isActive }) =>
-          isActive
-            ? ` text-[#fcb040] w-fit text-sm font-medium  `
-            : `text-sm w-fit ${
-                location.pathname === "/" && scrollY < 199 && "text-white"
-              }  font-medium hover:text-[#fcb040] duration-300 `
-        }
-      >
-        <p className="">MyList</p>
-      </NavLink>
+                    onClick={() => {
+                      setMenu(false);
+                      
+                    }}
+                    to="/allTouristSpot"
+                    className={({ isActive }) =>
+                      isActive
+                        ? ` text-[#fcb040] w-fit text-sm font-medium  `
+                        : `text-sm w-fit ${
+                            location.pathname === "/" &&
+                            scrollY < 199 &&
+                            "text-white"
+                          }  font-medium hover:text-[#fcb040] duration-300 `
+                    }
+                  >
+                    <p className="">AllTouristSpot</p>
+                  </NavLink>
+                  {
+                    loading ? <NavLink
+                    onClick={() => {
+                      setMenu(false);
+                      
+                    }}
+                    to="/addTouristSpot"
+                    className={({ isActive }) =>
+                      isActive
+                        ? ` text-[#fcb040] w-fit text-sm font-medium  `
+                        : `text-sm w-fit  ${
+                            location.pathname === "/" &&
+                            scrollY < 199 &&
+                            "text-white"
+                          } font-medium hover:text-[#fcb040] duration-300 `
+                    }
+                  >
+                    <p className="">AddTouristSpot</p>
+                  </NavLink> : user && <NavLink
+                    onClick={() => {
+                      setMenu(false);
+                      
+                    }}
+                    to="/addTouristSpot"
+                    className={({ isActive }) =>
+                      isActive
+                        ? ` text-[#fcb040] w-fit text-sm font-medium  `
+                        : `text-sm w-fit  ${
+                            location.pathname === "/" &&
+                            scrollY < 199 &&
+                            "text-white"
+                          } font-medium hover:text-[#fcb040] duration-300 `
+                    }
+                  >
+                    <p className="">AddTouristSpot</p>
+                  </NavLink> 
+                  }
+                  {
+                   loading ?  <NavLink
+                   onClick={() => {
+                     setMenu(false);
+                   
+                   }}
+                   to="/myList"
+                   className={({ isActive }) =>
+                     isActive
+                       ? ` text-[#fcb040] w-fit text-sm font-medium  `
+                       : `text-sm w-fit ${
+                           location.pathname === "/" &&
+                           scrollY < 199 &&
+                           "text-white"
+                         }  font-medium hover:text-[#fcb040] duration-300 `
+                   }
+                 >
+                   <p className="">MyList</p>
+                 </NavLink>   : user  && <NavLink
+                    onClick={() => {
+                      setMenu(false);
+                    
+                    }}
+                    to="/myList"
+                    className={({ isActive }) =>
+                      isActive
+                        ? ` text-[#fcb040] w-fit text-sm font-medium  `
+                        : `text-sm w-fit ${
+                            location.pathname === "/" &&
+                            scrollY < 199 &&
+                            "text-white"
+                          }  font-medium hover:text-[#fcb040] duration-300 `
+                    }
+                  >
+                    <p className="">MyList</p>
+                  </NavLink> 
+                  }
+                  <NavLink
+                    onClick={() => {
+                      setMenu(false);
+                     
+                    }}
+                    to="/contact"
+                    className={({ isActive }) =>
+                      isActive
+                        ? ` text-[#fcb040] w-fit text-sm font-medium  `
+                        : `text-sm w-fit ${
+                            location.pathname === "/" &&
+                            scrollY < 199 &&
+                            "text-white"
+                          }  font-medium hover:text-[#fcb040] duration-300 `
+                    }
+                  >
+                    <p className="">Contact</p>
+                  </NavLink>
+                 
     </>
   );
 
   return (
     <>
-      <header className="relative z-30 ">
+      <header className="relative  z-30 ">
         <div
-          className={`navbar px-2  md:px-8  ${
+          className={`navbar px-2 py-0  md:px-4 lg:8  ${
             scrollY < 199
               ? "top-[0.1px] bg-transparent shadow-sm"
               : scrollY > 199
@@ -300,14 +420,14 @@ export default function NavBar() {
 
                   <svg
                     className={`swap-off fill-current z-30 ${
-                        theme === "light"
-                          ? location.pathname === "/"
-                            ? scrollY < 199
-                              ? "text-white"
-                              : "text-[#4b5664]"
+                      theme === "light"
+                        ? location.pathname === "/"
+                          ? scrollY < 199
+                            ? "text-white"
                             : "text-[#4b5664]"
-                          : "text-white"
-                      }  `}
+                          : "text-[#4b5664]"
+                        : "text-white"
+                    }  `}
                     xmlns="http://www.w3.org/2000/svg"
                     width="26"
                     height="26"
@@ -319,14 +439,14 @@ export default function NavBar() {
                   {/* close icon */}
                   <svg
                     className={`swap-on fill-current z-30 ${
-                        theme === "light"
-                          ? location.pathname === "/"
-                            ? scrollY < 199
-                              ? "text-white"
-                              : "text-[#4b5664]"
+                      theme === "light"
+                        ? location.pathname === "/"
+                          ? scrollY < 199
+                            ? "text-white"
                             : "text-[#4b5664]"
-                          : "text-white"
-                      } `}
+                          : "text-[#4b5664]"
+                        : "text-white"
+                    } `}
                     xmlns="http://www.w3.org/2000/svg"
                     width="26"
                     height="26"
@@ -352,7 +472,11 @@ export default function NavBar() {
                       </div>
                     </div>
                     <div>
-                      <h2 className={`text-lg font-bold ${theme ==='light'?'text-[#191515]':'text-white'}  `}>
+                      <h2
+                        className={`text-lg font-bold ${
+                          theme === "light" ? "text-[#191515]" : "text-white"
+                        }  `}
+                      >
                         {user?.displayName || "Anonymous"}
                       </h2>
                     </div>
@@ -375,7 +499,9 @@ export default function NavBar() {
                 {responsiveNavLinks}
 
                 <div
-                  className={` ${theme==="light"?'bg-gray-800':'bg-white'} w-full inline-flex h-[1px] my-2`}
+                  className={` ${
+                    theme === "light" ? "bg-gray-800" : "bg-white"
+                  } w-full inline-flex h-[1px] my-2`}
                 ></div>
                 <li className="">
                   {user ? (
@@ -385,13 +511,25 @@ export default function NavBar() {
                         setMenu(false);
                       }}
                       className={`flex px-2 py-1 w-fit  relative rounded group overflow-hidden font-medium border-b  
-                    ${theme==="light"?'border-gray-800 text-gray-800':'border-gray-50 text-white'}
+                    ${
+                      theme === "light"
+                        ? "border-gray-800 text-gray-800"
+                        : "border-gray-50 text-white"
+                    }
               `}
                     >
                       <span
-                        className={`absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 ${theme==="light"?'bg-gray-800':'bg-gray-50'}  group-hover:h-full opacity-90`}
+                        className={`absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 ${
+                          theme === "light" ? "bg-gray-800" : "bg-gray-50"
+                        }  group-hover:h-full opacity-90`}
                       ></span>
-                      <span className={`relative ${theme==="light"?'group-hover:text-white':'group-hover:text-black'} `}>
+                      <span
+                        className={`relative ${
+                          theme === "light"
+                            ? "group-hover:text-white"
+                            : "group-hover:text-black"
+                        } `}
+                      >
                         Logout
                       </span>
                     </button>
@@ -400,14 +538,26 @@ export default function NavBar() {
                       to="/login"
                       onClick={() => setMenu(false)}
                       className={`flex px-2 py-1 w-fit  relative rounded group overflow-hidden font-medium border-b  
-                      ${theme==="light"?'border-gray-800 text-gray-800':'border-gray-50 text-white'}
+                      ${
+                        theme === "light"
+                          ? "border-gray-800 text-gray-800"
+                          : "border-gray-50 text-white"
+                      }
               
               `}
                     >
                       <span
-                        className={`absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0  ${theme==="light"?'bg-gray-800':'bg-gray-50'} group-hover:h-full opacity-90`}
+                        className={`absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0  ${
+                          theme === "light" ? "bg-gray-800" : "bg-gray-50"
+                        } group-hover:h-full opacity-90`}
                       ></span>
-                      <span className={`relative ${theme==="light"?'group-hover:text-white':'group-hover:text-black'}  `}>
+                      <span
+                        className={`relative ${
+                          theme === "light"
+                            ? "group-hover:text-white"
+                            : "group-hover:text-black"
+                        }  `}
+                      >
                         Login
                       </span>
                     </Link>
@@ -417,14 +567,11 @@ export default function NavBar() {
             </OutsideClickHandler>
             {/* responsive menu end    */}
 
-            <ul className="menu menu-horizontal px-1 md:gap-5  lg:gap-8 hidden  md:flex items-center ">
-              {navLinks}
+            <ul className="menu menu-horizontal px-1 py-0 h-16 md:gap-3  lg:gap-8 hidden  md:flex items-center ">
+          
 
-              {loading ? (
-                <button>logout</button>
-              ) : (
-                user && <button onClick={handleLogout}>logout</button>
-              )}
+              
+              {navLinks}
 
               {loading ? (
                 <div className=" md:flex hidden  items-center gap-1">
@@ -441,34 +588,60 @@ export default function NavBar() {
                 </div>
               ) : (
                 user && (
-                  <div className=" md:flex hidden  items-center gap-1">
                     <div
-                      className=" tooltip-left md:tooltip-bottom tooltip  flex items-center "
-                      data-tip={user?.displayName || "Anonymous"}
-                    >
-                      <div className="avatar">
+                className={`h-full  relative group  flex items-center justify-center `}
+              >
+                <button
+                 
+                >
+                  <div className=" md:flex hidden  items-center gap-1">
+
+                  <div className="avatar">
                         <div className="w-8 rounded-full tooltip  ">
                           <img src={user?.photoURL || profile} />
                         </div>
                       </div>
-                    </div>
+              
                   </div>
+                </button>
+
+                <ul
+                  className="h-fit -translate-y-44 -translate-x-28   group-hover:translate-y-[6.7rem]  transition-transform duration-500
+             w-40 px-4 py-4   bg-black text-white  absolute left-0 bottom-0"
+                >
+                    
+                    <IoMdArrowDropup className="text-black text-4xl absolute translate-x-24  -translate-y-[2.3rem] " />
+                    <div className="flex flex-col justify-end items-end gap-2">
+                    { user && <>
+                   <h1 className=" text-sm" >{user?.displayName || "Anonymous"}</h1>
+                   <NavLink
+                    onClick={() => {
+                      setMenu(false);
+                     
+                    }}
+                    to="/updateProfile"
+                    className={({ isActive }) =>
+                      isActive
+                        ? ` text-[#fcb040] w-fit text-sm   `
+                        : `text-sm w-fit ${
+                            location.pathname === "/" &&
+                            scrollY < 199 &&
+                            "text-white"
+                          }   hover:text-[#fcb040] duration-300 `
+                    }
+                  >
+                    <p className="flex items-center gap-1"> <MdBrowserUpdated className="text-white" /> Update profile</p>
+                  </NavLink>
+                    <button onClick={handleLogout} className="flex items-center text-sm gap-1" > <MdLogout /> logout</button>
+                   </>}
+                    </div>
+                </ul>
+              </div>
+                  
                 )
               )}
 
-              {/* <li className=" hover:bg-transparent bg- "> 
-             <div className="dropdown dropdown-left dropdown-hover dropdown-bottom relative  " >
-              <div tabIndex={0} role="button" className="  avatar  h-12  w-12 absolute translate-y-2 right-1  ">
-        <div className="w-8 h-8 rounded-full flex items-center justify-center  absolute  right-2 ">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
-      </div>
-      <ul tabIndex={0} className="mt-7 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-        <li>{user?.displayName || "Anonymous"}</li>
-        <li><a>Logout</a></li>
-      </ul>
-              </div>
-             </li> */}
+             
             </ul>
           </div>
         </div>

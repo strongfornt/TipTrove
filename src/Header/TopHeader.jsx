@@ -19,7 +19,7 @@ export default function TopHeader() {
   };
   return (
     <div className=" bg-red-800 ">
-      <div className="bg-[#232020]   hidden  md:flex justify-between items-center px-4  md:px-8 md:py-2  ">
+      <div className="bg-[#232020]   hidden  md:flex justify-between items-center px-4  lg:px-8 md:py-2  ">
         <div className="flex items-center gap-6  md:gap-10">
           <div className="flex gap-2 items-center ">
             <h1 className="text-[#fdfcfc] text-[12px] font-medium">

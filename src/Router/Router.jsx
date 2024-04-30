@@ -16,6 +16,7 @@ import MyList from "../Pages/MyList/MyList";
 import UpdateTouristSpot from "../Pages/MyList/UpdateMyList/UpdateTouristSpot";
 
 import CardRequestCountry from "../Components/HomeData/Country/CardRequestCountry";
+import Contact from "../Pages/Contact/Contact";
 
    export const router = createBrowserRouter([
     {
@@ -66,6 +67,10 @@ import CardRequestCountry from "../Components/HomeData/Country/CardRequestCountr
             path:'/countryCard/:country',
             element:<CardRequestCountry/>,
             loader:({params}) => fetch(`https://tourism-server-side-blush.vercel.app/country/${params.country}`)
+        },
+        {
+            path:'/contact',
+            element:<Contact/>
         }
       ]
     },
