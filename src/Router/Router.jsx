@@ -25,8 +25,8 @@ import CardRequestCountry from "../Components/HomeData/Country/CardRequestCountr
       children:[
         {
             path:'/',
-            element:<Home/>,
-            loader:()=>fetch("https://tourism-server-side-blush.vercel.app/country")
+            element:<Home/>
+            
         },
         {
             path:'/register',

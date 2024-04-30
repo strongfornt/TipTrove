@@ -24,6 +24,7 @@ export default function Slider() {
           delay: 2500,
           disableOnInteraction: false,
         }}
+        speed={500}
         modules={[Pagination, Autoplay, Navigation, Keyboard]}
         className=" w-full"
       >

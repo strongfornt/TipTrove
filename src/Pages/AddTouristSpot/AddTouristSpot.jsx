@@ -198,7 +198,7 @@ export default function AddTouristSpot() {
                   type="text"
                   name="time"
                   id="time"
-                  placeholder="Travel time"
+                  placeholder="1/2... days"
                   className="w-full px-3 py-2 border outline-none rounded-md bg-transparent border-gray-300 focus:ring-1 focus:ring-[#fcb040]"
                 />
               </div>
@@ -208,7 +208,7 @@ export default function AddTouristSpot() {
                 </label>
                 <input
                   required
-                  type="text"
+                  type="number"
                   name="visitor"
                   id="visitor"
                   placeholder="Total visitor"

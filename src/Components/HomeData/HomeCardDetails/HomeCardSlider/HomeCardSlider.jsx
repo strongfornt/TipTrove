@@ -56,10 +56,12 @@ export default function HomeCardSlider({data}) {
         pagination={{
           clickable: true,
         }}
+        
         autoplay={{
             delay: 1800,
             disableOnInteraction: false,
           }}
+          speed={800}
           keyboard={true}
        
         modules={[Pagination,Autoplay,Keyboard]}
@@ -123,18 +125,7 @@ export default function HomeCardSlider({data}) {
         
         </div>
         <div className="flex flex-col    ">
-          {/* <p 
-          data-aos="zoom-in-up"
-          data-aos-delay="1400 "
-          data-aos-duration="1400"
-          className="flex font-semibold text-[#4b5664] text-base items-center gap-1 ">
-            Season -
-            <span className="font-normal     text-[#4b5664]">
-              {" "}
-            
-            {seasonality}
-            </span>
-          </p> */}
+        
           <p 
           data-aos="zoom-in-up"
           data-aos-delay="1800 "

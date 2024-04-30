@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom/dist";
 import CountryCardDetails from "./CountryCardDetails";
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/ContextProvider";
+import NotFoundData from "../../NotFoundData/NotFoundData";
 
 
 export default function CardRequestCountry() {
@@ -14,7 +15,7 @@ console.log(data[0]?.country);
       <div className="text-transparent">*</div>
       <div className="px-2 my-16">
       <h1 className={`mb-3 text-3xl font-semibold text-center   ${theme ==="light"?'text-[#4b5664]':'text-white'}`}>
-             Explore <span className="text-[#fcb040]" >{data[0]?.country}'s Best</span>
+             Explore <span className="text-[#fcb040]" >{data[0]?.country}'s Best!</span>
         </h1>
         <p
           className={`text-base text-center mb-5 max-w-screen-sm mx-auto ${
@@ -30,9 +31,19 @@ console.log(data[0]?.country);
               : "grid md:grid-cols-2 gap-6 lg:grid-cols-3"
           } `}
         >
-          {data?.map((data, idx) => (
-            <CountryCardDetails data={data} key={idx} />
-          ))}
+
+            {
+                data?.length ? (
+                    data?.map((data, idx) => (
+                        <CountryCardDetails data={data} key={idx} />
+                      ))
+                ) : (
+                  <div>
+                    <NotFoundData />
+                  </div>
+                )
+            }
+         
         </div>
       </div>
     </>

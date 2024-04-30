@@ -10,17 +10,27 @@ import CountryCard from "../../Components/HomeData/Country/CountryCard";
 
 import { useLoaderData } from "react-router-dom/dist";
 import CountryCardDetails from "../../Components/HomeData/Country/CountryCardDetails";
+import axios from "axios";
+import Faq from "../../Components/HomeData/Faq/Faq";
+import TopReview from "../../Components/TopReview/TopReview";
 
 
 export default function Home() {
   const { setMenu, theme } = useContext(AuthContext);
-  const countryData = useLoaderData()
+  const [countryData,setCountryData] = useState([])
+  const[loading,setLoading] = useState(true);
 
   const { data, isLoading } = useTanStack(
     "https://tourism-server-side-blush.vercel.app/touristSpot",
     "touristSpot"
   );
-
+ useEffect(()=>{
+    axios.get("https://tourism-server-side-blush.vercel.app/country")
+    .then(res =>{
+        setCountryData(res.data)
+        setLoading(false)
+    })
+ },[])
 
   
 console.log(countryData);
@@ -43,11 +53,13 @@ console.log(countryData);
         >
         Explore the World for Yourself
         </p>
-           <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-6  px-2  md:px-4 lg::px-8" >
-           {
-            countryData?.map((data,idx) => <CountryCard data={data} key={idx} />)
-           }
-           </div>
+          {
+            loading ? <Spinner/> :  <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-6  px-2  md:px-4 lg::px-8" >
+            {
+             countryData?.map((data,idx) => <CountryCard data={data} key={idx} />)
+            }
+            </div>
+          }
       </div>
 
       <div className="my-16 px-2">
@@ -69,22 +81,18 @@ console.log(countryData);
       </div>
 
      
-
+    {/* <div className="my-16 px-4" >
+        <Faq/>
+    </div> */}
+    <div className="my-16 ">
+        <TopReview/>
+    </div>
 
       <div className="mt-16 mb-8">
         <Partnerships />
       </div>
 
-      {/* <div className="grid grid-cols-3" >
-      {
-        data?.map((data,idx)=> <div key={idx} >
-       
-       <CountryCardDetails data={data} />
       
-      </div> )
-      }
-      </div> */}
-
       
 
     </>
