@@ -36,6 +36,10 @@ https://tourism-spot-eeb38.web.app/
 
 1.Lottie react
 - I used it on the 404  page and on MyList page if there is no data it will show there. 
+
+2.React Awesome reveal
+- i have integrated the Awesome reveal package to bring our website to life with engaging animations that trigger as you scroll through the page.
+
 ## Feedback
 
 If you have any feedback, please reach out to us at contact@tiptrove.com
