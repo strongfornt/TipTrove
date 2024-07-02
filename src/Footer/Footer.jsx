@@ -82,7 +82,7 @@ export default function Footer() {
                   className="text-[#d4cccc]"
                 >
                   
-                    FAQ
+                  Collaborations
                  
                 </li>
               </ul>
