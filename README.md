@@ -7,7 +7,7 @@ https://tourism-spot-eeb38.web.app/
 
 ## Server site repo
 
-https://tourism-server-side-blush.vercel.app/
+https://github.com/strongfornt/TipTrove-server
 ## Key Features
 
  - Explore a curated collection of tourist spots categorized by country across Southeast Asia.
